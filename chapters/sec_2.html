@@ -1,0 +1,708 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Эрлангенская программа Феликса Клейна — новый взгляд на геометрию &#8212; Практикум по компьютерным технологиям</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/sec_2';</script>
+    <link rel="icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Аффинные преобразования и аффинная геометрия" href="sec_3.html" />
+    <link rel="prev" title="Элементарная геометрия треугольника" href="sec_1.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../docs/icons/index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Практикум по компьютерным технологиям - Home"/>
+    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="Практикум по компьютерным технологиям - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../docs/icons/index.html">
+                    Язык программирования Python
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Глава 1</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="sec_1.html">Элементарная геометрия треугольника</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Эрлангенская программа Феликса Клейна — новый взгляд на геометрию</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sec_3.html">Аффинные преобразования и аффинная геометрия</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sec_4.html">Проективная геометрия — основные понятия</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proectivnaia_geom.html">Основы проективной геометрии</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/Fetappi/CPP_lectures" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/Fetappi/CPP_lectures/edit/main/chapters/sec_2.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/Fetappi/CPP_lectures/issues/new?title=Issue%20on%20page%20%2Fchapters/sec_2.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/chapters/sec_2.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Эрлангенская программа Феликса Клейна — новый взгляд на геометрию</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Введение</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">1. Основная идея: геометрия как наука об инвариантах</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">2. Требования к группе преобразований</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">3. Примеры различных геометрий с точки зрения Клейна</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">3.1. Евклидова геометрия</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">3.2. Геометрия подобия</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">3.3. Аффинная геометрия</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">3.4. Проективная геометрия</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">3.5. Неевклидовы геометрии (Лобачевского и Римана)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">4. Иллюстрация на геометрии треугольника</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">5. Почему это важно?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">6. Резюме</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>Эрлангенская программа Феликса Клейна — новый взгляд на геометрию<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<section id="id2">
+<h2>Введение<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>До второй половины XIX века геометрия воспринималась как наука о свойствах реального пространства. Считалось, что евклидова геометрия — единственно возможная и истинная. Однако открытие неевклидовых геометрий Лобачевским и Бойяи поставило под сомнение этот взгляд. Возникла потребность в новой, более общей точке зрения, которая объяснила бы, почему существует много разных геометрий и как они связаны между собой.</p>
+<p>Такую точку зрения предложил в 1872 году молодой немецкий математик <strong>Феликс Клейн</strong> в своей знаменитой лекции в университете Эрлангена. Эта лекция вошла в историю под названием <strong>“Эрлангенская программа”</strong>. Сегодня мы познакомимся с её ключевыми идеями.</p>
+</section>
+<hr class="docutils" />
+<section id="id3">
+<h2>1. Основная идея: геометрия как наука об инвариантах<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<p>Клейн предложил рассматривать геометрию не как набор аксиом о точках и прямых, а как науку, изучающую свойства фигур, которые <strong>остаются неизменными</strong> (инвариантными) относительно некоторой совокупности преобразований.</p>
+<p><strong>Простой пример: евклидова геометрия</strong></p>
+<p>Вспомним, что такое движение плоскости. Это преобразование, при котором сохраняются расстояния между точками. Примеры: параллельный перенос, поворот, отражение (симметрия).</p>
+<p><strong>Какие свойства фигур сохраняются при движениях?</strong></p>
+<ul class="simple">
+<li><p>Длина отрезка.</p></li>
+<li><p>Величина угла.</p></li>
+<li><p>Площадь фигуры.</p></li>
+<li><p>Свойство быть окружностью (окружность переходит в окружность).</p></li>
+</ul>
+<p>А что <strong>не сохраняется</strong>? Например, ориентация (при отражении она меняется), но это уже другой разговор.</p>
+<p>Итак, <strong>евклидова геометрия</strong> — это теория, изучающая свойства фигур, инвариантные относительно <strong>группы движений</strong>.</p>
+<p>Но почему мы должны ограничиваться только движениями? Клейн говорит: давайте выберем <strong>любую</strong> совокупность преобразований, объявим её “группой”, и будем изучать то, что при этих преобразованиях сохраняется. Так мы получим новую геометрию.</p>
+</section>
+<hr class="docutils" />
+<section id="id4">
+<h2>2. Требования к группе преобразований<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<p>Чтобы наше “равенство” фигур было осмысленным (Клейн называет его “эквивалентностью относительно группы”), нужно, чтобы совокупность преобразований удовлетворяла трём естественным условиям:</p>
+<ol class="arabic simple">
+<li><p><strong>Тождественное преобразование</strong> должно быть в группе (каждая фигура “равна” сама себе).</p></li>
+<li><p><strong>Обратимость</strong>: если есть преобразование, переводящее фигуру <span class="math notranslate nohighlight">\((F)\)</span> в <span class="math notranslate nohighlight">\((F')\)</span>, то должно быть преобразование, возвращающее <span class="math notranslate nohighlight">\((F')\)</span> обратно в <span class="math notranslate nohighlight">\((F)\)</span>.</p></li>
+<li><p><strong>Замкнутость</strong>: если есть преобразования <span class="math notranslate nohighlight">\((Pi_1)\)</span> и <span class="math notranslate nohighlight">\((Pi_2)\)</span>, переводящие <span class="math notranslate nohighlight">\((F)\)</span> в <span class="math notranslate nohighlight">\((F')\)</span> и <span class="math notranslate nohighlight">\((F')\)</span> в <span class="math notranslate nohighlight">\((F'')\)</span>, то их композиция (последовательное выполнение) должна переводить <span class="math notranslate nohighlight">\((F)\)</span> в <span class="math notranslate nohighlight">\((F'')\)</span> и тоже принадлежать группе.</p></li>
+</ol>
+<p>Эти три условия как раз и определяют математическое понятие <strong>группы преобразований</strong>.</p>
+<p>Таким образом, Клейн даёт следующее определение:</p>
+<blockquote>
+<div><p><strong>Геометрия</strong> — это теория, изучающая свойства фигур, сохраняющиеся при всех преобразованиях некоторой группы.</p>
+</div></blockquote>
+</section>
+<hr class="docutils" />
+<section id="id5">
+<h2>3. Примеры различных геометрий с точки зрения Клейна<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
+<p>Рассмотрим несколько классических примеров.</p>
+<section id="id6">
+<h3>3.1. Евклидова геометрия<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Группа:</strong> группа движений (сохраняющих расстояния).</p></li>
+<li><p><strong>Инварианты:</strong> расстояния, углы, площади, параллельность (в евклидовом смысле), форма окружности и т.д.</p></li>
+</ul>
+</section>
+<section id="id7">
+<h3>3.2. Геометрия подобия<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Группа:</strong> группа преобразований подобия (движения + гомотетии). Они сохраняют углы, но не расстояния (расстояния умножаются на постоянный коэффициент).</p></li>
+<li><p><strong>Инварианты:</strong> углы, отношение длин отрезков, форма фигур (подобные фигуры считаются равными).</p></li>
+</ul>
+</section>
+<section id="id8">
+<h3>3.3. Аффинная геометрия<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Группа:</strong> группа аффинных преобразований. Это преобразования, переводящие прямые в прямые (но не обязательно сохраняющие расстояния и углы).</p></li>
+<li><p><strong>Инварианты:</strong></p>
+<ul>
+<li><p>Прямые переходят в прямые.</p></li>
+<li><p>Параллельность прямых сохраняется.</p></li>
+<li><p>Отношение отрезков на одной прямой (или на параллельных прямых) сохраняется.</p></li>
+<li><p>Отношение площадей фигур сохраняется.</p></li>
+</ul>
+</li>
+<li><p><strong>Что не сохраняется:</strong> длины, углы, форма окружности (окружность переходит в эллипс).</p></li>
+</ul>
+</section>
+<section id="id9">
+<h3>3.4. Проективная геометрия<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Группа:</strong> группа проективных преобразований. Они переводят прямые в прямые, но могут нарушать параллельность (параллельные прямые могут стать пересекающимися).</p></li>
+<li><p><strong>Инварианты:</strong></p>
+<ul>
+<li><p>Прямые переходят в прямые.</p></li>
+<li><p>Пересечение прямых (точка пересечения) сохраняется.</p></li>
+<li><p><strong>Двойное (сложное) отношение четырёх точек</strong> на прямой (об этом позже).</p></li>
+</ul>
+</li>
+<li><p><strong>Что не сохраняется:</strong> параллельность, длины, углы, отношения отрезков.</p></li>
+</ul>
+</section>
+<section id="id10">
+<h3>3.5. Неевклидовы геометрии (Лобачевского и Римана)<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
+<p>Клейн показал, что они также могут быть описаны как геометрии некоторых групп проективных преобразований, сохраняющих некоторую фиксированную кривую второго порядка (так называемый <strong>абсолют</strong>). Например, если взять группу проективных преобразований, переводящих в себя некоторую окружность, и рассматривать только внутренность этой окружности, то внутри неё мы получим модель геометрии Лобачевского.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="id11">
+<h2>4. Иллюстрация на геометрии треугольника<a class="headerlink" href="#id11" title="Link to this heading">#</a></h2>
+<p>Многие теоремы о треугольниках можно классифицировать с точки зрения того, инвариантами какой группы они являются.</p>
+<p><strong>Пример 1: теорема о медианах</strong>
+“Три медианы треугольника пересекаются в одной точке и делятся в отношении <span class="math notranslate nohighlight">\((2:1)\)</span>”.</p>
+<p>Это свойство <strong>инвариантно относительно аффинных преобразований</strong>. Почему? Потому что аффинные преобразования сохраняют середины отрезков (отношение, в котором точка делит отрезок) и, следовательно, образ медианы будет медианой образа треугольника. Значит, если мы докажем теорему для одного треугольника (например, для равностороннего), то она автоматически будет верна для любого треугольника, так как любой треугольник можно получить из равностороннего аффинным преобразованием.</p>
+<p><strong>Пример 2: теорема о вписанной окружности</strong>
+“В треугольник можно вписать окружность”.</p>
+<!-- А вот это свойство **не является аффинным инвариантом**. При аффинном преобразовании окружность переходит в эллипс. Равносторонний треугольник переходит в произвольный, а вписанная в него окружность — во вписанный эллипс (эллипс Штейнера). Таким образом, теорема о вписанной окружности относится к евклидовой геометрии, а не к аффинной. -->
+<p><strong>Вопрос на размышление:</strong>
+А к инвариантам какой группы относится теорема о существовании описанной окружности? Ведь она есть у любого треугольника. Но при аффинном преобразовании описанная окружность тоже переходит в эллипс. Значит, это не аффинный инвариант. Однако мы можем найти группу, которая сохраняет описанную окружность. Это будут проективные преобразования, переводящие данную окружность в себя. Но тогда вписанная окружность при таких преобразованиях уже не сохранится! Так что в геометрии треугольника есть теоремы разных уровней.</p>
+</section>
+<hr class="docutils" />
+<section id="id12">
+<h2>5. Почему это важно?<a class="headerlink" href="#id12" title="Link to this heading">#</a></h2>
+<p>Эрлангенская программа произвела настоящую революцию в математике. Она позволила:</p>
+<ol class="arabic simple">
+<li><p><strong>Упорядочить</strong> существующие геометрии, показав их иерархию (чем больше группа, тем меньше инвариантов, тем “беднее” геометрия).</p></li>
+<li><p><strong>Создавать новые геометрии</strong>, просто выбирая новую группу преобразований.</p></li>
+<li><p><strong>Понять связь</strong> между различными геометрическими дисциплинами.</p></li>
+<li><p><strong>Унифицировать методы</strong> доказательства: если свойство инвариантно относительно некоторой группы, достаточно доказать его для одной фигуры (например, самой простой), а затем распространить на все фигуры, получаемые из неё преобразованиями группы.</p></li>
+</ol>
+<p><strong>Иерархия геометрий</strong> (для плоскости) выглядит так (от самой “богатой” к самой “бедной”):</p>
+<ul class="simple">
+<li><p><strong>Евклидова геометрия</strong> (группа движений)</p>
+<ul>
+<li><p>сохраняет расстояния, углы</p></li>
+</ul>
+</li>
+<li><p><strong>Геометрия подобия</strong> (движения + гомотетии)</p>
+<ul>
+<li><p>сохраняет углы, но не расстояния</p></li>
+</ul>
+</li>
+<li><p><strong>Аффинная геометрия</strong> (аффинные преобразования)</p>
+<ul>
+<li><p>сохраняет параллельность, отношения отрезков на параллельных прямых</p></li>
+</ul>
+</li>
+<li><p><strong>Проективная геометрия</strong> (проективные преобразования)</p>
+<ul>
+<li><p>сохраняет прямые и двойное отношение</p></li>
+</ul>
+</li>
+</ul>
+<p>Каждая следующая группа шире предыдущей (движения являются частным случаем аффинных, аффинные — частным случаем проективных). Соответственно, каждая следующая геометрия изучает более общие свойства.</p>
+</section>
+<hr class="docutils" />
+<section id="id13">
+<h2>6. Резюме<a class="headerlink" href="#id13" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Клейн предложил рассматривать геометрию как науку об инвариантах группы преобразований.</p></li>
+<li><p>Разные группы порождают разные геометрии.</p></li>
+<li><p>Евклидова геометрия соответствует группе движений.</p></li>
+<li><p>Аффинная геометрия — группе аффинных преобразований.</p></li>
+<li><p>Проективная геометрия — группе проективных преобразований.</p></li>
+<li><p>Неевклидовы геометрии могут быть вписаны в эту схему как подгруппы проективных преобразований, сохраняющих некоторую кривую (абсолют).</p></li>
+<li><p>Геометрия треугольника содержит теоремы, относящиеся к разным уровням этой иерархии.</p></li>
+</ul>
+<hr class="docutils" />
+<!-- *Вопросы для самопроверки:*
+1. Какие три условия определяют группу преобразований?
+2. Почему свойство "быть медианой" аффинно инвариантно, а свойство "быть биссектрисой" — нет?
+3. Как связаны между собой евклидова, аффинная и проективная геометрии с точки зрения Клейна? -->
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapters"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="sec_1.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Элементарная геометрия треугольника</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="sec_3.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Аффинные преобразования и аффинная геометрия</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Введение</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">1. Основная идея: геометрия как наука об инвариантах</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">2. Требования к группе преобразований</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">3. Примеры различных геометрий с точки зрения Клейна</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">3.1. Евклидова геометрия</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">3.2. Геометрия подобия</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">3.3. Аффинная геометрия</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">3.4. Проективная геометрия</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">3.5. Неевклидовы геометрии (Лобачевского и Римана)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">4. Иллюстрация на геометрии треугольника</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">5. Почему это важно?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">6. Резюме</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Shishkin Artem
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

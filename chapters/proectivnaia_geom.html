@@ -1,0 +1,705 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Основы проективной геометрии &#8212; Практикум по компьютерным технологиям</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/proectivnaia_geom';</script>
+    <link rel="icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Проективная геометрия — основные понятия" href="sec_4.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../docs/icons/index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Практикум по компьютерным технологиям - Home"/>
+    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="Практикум по компьютерным технологиям - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../docs/icons/index.html">
+                    Язык программирования Python
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Глава 1</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="sec_1.html">Элементарная геометрия треугольника</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sec_2.html">Эрлангенская программа Феликса Клейна — новый взгляд на геометрию</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sec_3.html">Аффинные преобразования и аффинная геометрия</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sec_4.html">Проективная геометрия — основные понятия</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Основы проективной геометрии</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/Fetappi/CPP_lectures" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/Fetappi/CPP_lectures/edit/main/chapters/proectivnaia_geom.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/Fetappi/CPP_lectures/issues/new?title=Issue%20on%20page%20%2Fchapters/proectivnaia_geom.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/chapters/proectivnaia_geom.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Основы проективной геометрии</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Аффинная геометрия</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Обозначения</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Идеальные точки и проективная плоскость</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Однородные координаты на действительной проективной плоскости</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>Основы проективной геометрии<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<p>Проективная геометрия изучает свойства инцидентности, т. е. те свойства, которые сохраняются при растяжениях, переносах и вращениях плоскости. Поэтому при аксиоматическом построении теории мы вынуждены игнорировать понятия расстояния и угла.</p>
+<p>Одним из самых важных примеров в этой книге является действительная проективная плоскость, и здесь мы займемся выяснением того, какие из знакомых нам фактов и методов (относящихся к евклидовой и аналитической геометрии) остаются справедливыми и для проективной плоскости, а какие теряют силу.</p>
+<section id="id2">
+<h2>Аффинная геометрия<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>Начнем с некоторых наиболее простых фактов обычной плоской геометрии, которые мы примем в качестве аксиом при синтетическом построении теории.</p>
+<p><strong>Определение.</strong> Аффинной плоскостью называют множество элементов, именуемых <strong>точками</strong>, и систему его подмножеств, именуемых <strong>прямыми</strong>, причем должны выполняться три формулируемые ниже аксиомы А1 — А3.</p>
+<p>Мы будем говорить, что «<span class="math notranslate nohighlight">\(P\)</span> лежит на <span class="math notranslate nohighlight">\(l\)</span>» или «<span class="math notranslate nohighlight">\(l\)</span> проходит через <span class="math notranslate nohighlight">\(P\)</span>», если точка <span class="math notranslate nohighlight">\(P\)</span> есть элемент подмножества (прямой) <span class="math notranslate nohighlight">\(l\)</span>.</p>
+<p><strong>А1.</strong> Для любых двух различных точек <span class="math notranslate nohighlight">\(P\)</span> и <span class="math notranslate nohighlight">\(Q\)</span> существует одна и только одна прямая, проходящая через них.</p>
+<p>Две прямые называются <strong>параллельными</strong>, если они совпадают или не имеют общих точек.</p>
+<p><strong>А2.</strong> Для любых заданных прямой <span class="math notranslate nohighlight">\(l\)</span> и точки <span class="math notranslate nohighlight">\(P\)</span> существует одна и только одна проходящая через <span class="math notranslate nohighlight">\(P\)</span> прямая <span class="math notranslate nohighlight">\(m\)</span>, параллельная <span class="math notranslate nohighlight">\(l\)</span>.</p>
+<p><strong>А3.</strong> Существуют три неколлинеарные точки.<br />
+(Точки <span class="math notranslate nohighlight">\(P_1, ..., P_n\)</span> называются <strong>коллинеарными</strong>, если существует такая прямая <span class="math notranslate nohighlight">\(l\)</span>, что все эти точки ей принадлежат.)</p>
+<section id="id3">
+<h3>Обозначения<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Символ</p></th>
+<th class="head"><p>Значение</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(P\)</span> ≠ <span class="math notranslate nohighlight">\(Q\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(P\)</span> не совпадает с <span class="math notranslate nohighlight">\(Q\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(P\)</span> ∈ <span class="math notranslate nohighlight">\(l\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(P\)</span> принадлежит <span class="math notranslate nohighlight">\(l\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(l\)</span> ∩ <span class="math notranslate nohighlight">\(m\)</span></p></td>
+<td><p>пересечение <span class="math notranslate nohighlight">\(l\)</span> и <span class="math notranslate nohighlight">\(m\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(l\)</span> ∥ <span class="math notranslate nohighlight">\(m\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(l\)</span> параллельна <span class="math notranslate nohighlight">\(m\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>∀</p></td>
+<td><p>для каждого</p></td>
+</tr>
+<tr class="row-odd"><td><p>∃</p></td>
+<td><p>существует</p></td>
+</tr>
+<tr class="row-even"><td><p>⇒</p></td>
+<td><p>влечет за собой</p></td>
+</tr>
+<tr class="row-odd"><td><p>⇔</p></td>
+<td><p>тогда и только тогда</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Пример.</strong> Обычная евклидова плоскость <span class="math notranslate nohighlight">\(ℝ^2\)</span> удовлетворяет аксиомам А1–А3, т. е. является аффинной плоскостью.</p>
+<hr class="docutils" />
+<figure class="align-default">
+<img alt="../_images/1.png" src="../_images/1.png" />
+</figure>
+<p>На этой плоскости удобно ввести декартовы координаты, как в аналитической геометрии (рис. 1). При этом точка <span class="math notranslate nohighlight">\(P\)</span> представится парой <span class="math notranslate nohighlight">\((x, y)\)</span>, где <span class="math notranslate nohighlight">\(x\)</span> и <span class="math notranslate nohighlight">\(y\)</span> — действительные числа. (Мы будем писать <span class="math notranslate nohighlight">\(x, y \in \mathbb{R}\)</span>).</p>
+<p><strong>Предложение 1.1.</strong> Параллельность является отношением эквивалентности.</p>
+<p><strong>Определение.</strong> Отношение ∼ есть отношение эквивалентности, если имеют место следующие три свойства:</p>
+<ol class="arabic simple">
+<li><p><strong>рефлексивность:</strong> <span class="math notranslate nohighlight">\(a\)</span> ∼ <span class="math notranslate nohighlight">\(a\)</span>,</p></li>
+<li><p><strong>симметричность:</strong> <span class="math notranslate nohighlight">\(a\)</span> ∼ <span class="math notranslate nohighlight">\(b\)</span> ⇔ <span class="math notranslate nohighlight">\(b\)</span> ∼ <span class="math notranslate nohighlight">\(a\)</span>,</p></li>
+<li><p><strong>транзитивность:</strong> <span class="math notranslate nohighlight">\(a\)</span> ∼ <span class="math notranslate nohighlight">\(b\)</span> и <span class="math notranslate nohighlight">\(b\)</span> ∼ <span class="math notranslate nohighlight">\(c\)</span> ⇔ <span class="math notranslate nohighlight">\(a\)</span> ∼ <span class="math notranslate nohighlight">\(c\)</span>.</p></li>
+</ol>
+<p><strong>Доказательство.</strong> Нам надо проверить следующие три утверждения:</p>
+<ol class="arabic simple">
+<li><p>каждая прямая параллельна сама себе (по определению);</p></li>
+<li><p><span class="math notranslate nohighlight">\(l\)</span> ∥ <span class="math notranslate nohighlight">\(m\)</span> ⇒ <span class="math notranslate nohighlight">\(m\)</span> ∥ <span class="math notranslate nohighlight">\(l\)</span> (по определению);</p></li>
+<li><p>если <span class="math notranslate nohighlight">\(l\)</span> ∥ <span class="math notranslate nohighlight">\(m\)</span> и <span class="math notranslate nohighlight">\(m\)</span> ∥ <span class="math notranslate nohighlight">\(n\)</span>, то <span class="math notranslate nohighlight">\(n\)</span> ∥ <span class="math notranslate nohighlight">\(l\)</span>.</p></li>
+</ol>
+<p>Если <span class="math notranslate nohighlight">\(l\)</span> = <span class="math notranslate nohighlight">\(n\)</span>, то доказательства не требуется. Если <span class="math notranslate nohighlight">\(l\)</span> ≠ <span class="math notranslate nohighlight">\(n\)</span> и существует точка <span class="math notranslate nohighlight">\(P\)</span> ∈ <span class="math notranslate nohighlight">\(l\)</span> ∩ <span class="math notranslate nohighlight">\(n\)</span>, то прямые <span class="math notranslate nohighlight">\(l\)</span> и <span class="math notranslate nohighlight">\(n\)</span> обе ∥ <span class="math notranslate nohighlight">\(m\)</span> и проходят через <span class="math notranslate nohighlight">\(P\)</span>, что невозможно по аксиоме A₂. Отсюда мы заключаем, что <span class="math notranslate nohighlight">\(l\)</span> ∩ <span class="math notranslate nohighlight">\(n\)</span> = ∅ (пустое множество), т. е. <span class="math notranslate nohighlight">\(l\)</span> ∥ <span class="math notranslate nohighlight">\(n\)</span>.</p>
+<p><strong>Предложение 1.2.</strong> Две различные прямые имеют не более одной общей точки.</p>
+<p>Это следует из того, что если две прямые <span class="math notranslate nohighlight">\(l\)</span> и <span class="math notranslate nohighlight">\(m\)</span> имеют две общие точки <span class="math notranslate nohighlight">\(P\)</span> и <span class="math notranslate nohighlight">\(Q\)</span>, <span class="math notranslate nohighlight">\(P ≠ Q\)</span>, то <span class="math notranslate nohighlight">\(l = m\)</span> по аксиоме A₁.</p>
+<p><strong>Пример.</strong> Аффинная плоскость имеет по крайней мере четыре различные точки; плоскость, состоящая ровно из четырех точек, существует.</p>
+<p>Действительно, в силу A₃ на плоскости есть три неколлинеарные точки; обозначим их через <span class="math notranslate nohighlight">\(P\)</span>, <span class="math notranslate nohighlight">\(Q\)</span>, <span class="math notranslate nohighlight">\(R\)</span>. Согласно A₂, существует прямая <span class="math notranslate nohighlight">\(l\)</span>, проходящая через <span class="math notranslate nohighlight">\(P\)</span> и параллельная прямой <span class="math notranslate nohighlight">\(QR\)</span>, соединяющей <span class="math notranslate nohighlight">\(Q\)</span> и <span class="math notranslate nohighlight">\(R\)</span> (эта прямая существует по A₁). Точно так же доказывается существование прямой <span class="math notranslate nohighlight">\(m\)</span> ∥ <span class="math notranslate nohighlight">\(PQ\)</span>, проходящей через <span class="math notranslate nohighlight">\(R\)</span>.</p>
+<p>Покажем теперь, что <span class="math notranslate nohighlight">\(l\)</span> не параллельна <span class="math notranslate nohighlight">\(m\)</span> (<span class="math notranslate nohighlight">\(l ≠ m\)</span>). Если бы это было не так, то мы бы имели</p>
+<div class="math notranslate nohighlight">
+\[
+PQ ∥ m ∥ l ∥ QR,
+\]</div>
+<p>откуда <span class="math notranslate nohighlight">\(PQ\)</span> ∥ <span class="math notranslate nohighlight">\(QR\)</span> по предложению 1.1. Но это невозможно, так как <span class="math notranslate nohighlight">\(PQ ≠ QR\)</span>, а <span class="math notranslate nohighlight">\(Q\)</span> принадлежит каждой из этих прямых.</p>
+<p>Отсюда следует, что <span class="math notranslate nohighlight">\(l\)</span> и <span class="math notranslate nohighlight">\(m\)</span> пересекаются в некоторой точке <span class="math notranslate nohighlight">\(S\)</span>. Так как <span class="math notranslate nohighlight">\(S\)</span> принадлежит прямой <span class="math notranslate nohighlight">\(m\)</span>, параллельной <span class="math notranslate nohighlight">\(PQ\)</span> и не совпадающей с ней, то <span class="math notranslate nohighlight">\(S\)</span> ≠ <span class="math notranslate nohighlight">\(P\)</span> и <span class="math notranslate nohighlight">\(S\)</span> ≠ <span class="math notranslate nohighlight">\(Q\)</span>. Точно так же <span class="math notranslate nohighlight">\(S\)</span> ≠ <span class="math notranslate nohighlight">\(R\)</span>. Таким образом, <strong>четвертая точка</strong> <span class="math notranslate nohighlight">\(S\)</span> необходимо должна существовать, и наше первое утверждение доказано.</p>
+<hr class="docutils" />
+<figure class="align-default">
+<img alt="../_images/2.png" src="../_images/2.png" />
+</figure>
+<p>Теперь рассмотрим прямые <span class="math notranslate nohighlight">\(PR\)</span> и <span class="math notranslate nohighlight">\(QS\)</span>. Они могут пересекаться (докажите, например, что это так в случае действительной проективной плоскости). Но они могут и не пересекаться — это не противоречит аксиомам.</p>
+<p>В этом случае мы получаем аффинную плоскость, содержащую ровно четыре точки <span class="math notranslate nohighlight">\(P\)</span>, <span class="math notranslate nohighlight">\(Q\)</span>, <span class="math notranslate nohighlight">\(R\)</span>, <span class="math notranslate nohighlight">\(S\)</span> и шесть прямых <span class="math notranslate nohighlight">\(PQ\)</span>, <span class="math notranslate nohighlight">\(PR\)</span>, <span class="math notranslate nohighlight">\(PS\)</span>, <span class="math notranslate nohighlight">\(QR\)</span>, <span class="math notranslate nohighlight">\(QS\)</span>, <span class="math notranslate nohighlight">\(RS\)</span> (см. рис. 2). Легко видеть, что аксиомы A1–A3 здесь выполняются. Таким образом, мы получили аффинную плоскость, содержащую наименьшее возможное число точек, а именно четыре.</p>
+<p><strong>Определение.</strong> Множество прямых образует <strong>пучок</strong>, если</p>
+<ol class="arabic simple">
+<li><p>все прямые этого множества проходят через некоторую точку <span class="math notranslate nohighlight">\(P\)</span>,</p></li>
+<li><p>все прямые множества параллельны некоторой прямой <span class="math notranslate nohighlight">\(l\)</span>; в этом случае говорят, что задан <strong>пучок параллельных прямых</strong>.</p></li>
+</ol>
+<p>В дальнейшем нам понадобится также следующее</p>
+<p><strong>Определение.</strong> <strong>Взаимно однозначным соответствием</strong> между двумя множествами <span class="math notranslate nohighlight">\(x\)</span> и <span class="math notranslate nohighlight">\(y\)</span> называется такое отображение <span class="math notranslate nohighlight">\(T\)</span> : <span class="math notranslate nohighlight">\(x\)</span> → <span class="math notranslate nohighlight">\(y\)</span> (т. е. правило <span class="math notranslate nohighlight">\(T\)</span>, по которому каждому элементу <span class="math notranslate nohighlight">\(x\)</span> ∈ <span class="math notranslate nohighlight">\(x\)</span> ставится в соответствие элемент <span class="math notranslate nohighlight">\(T(x) = y ∈ y\)</span>), что</p>
+<div class="math notranslate nohighlight">
+\[
+x_1 \neq x_2 \Rightarrow T(x_1) \neq T(x_2)
+\]</div>
+<p>и</p>
+<div class="math notranslate nohighlight">
+\[
+\forall y \in Y \; \exists x \in X : T(x) = y
+\]</div>
+<p>(последнее читается: для каждого <span class="math notranslate nohighlight">\(y\)</span> ∈ <span class="math notranslate nohighlight">\(y\)</span> существует элемент <span class="math notranslate nohighlight">\(x\)</span> ∈ <span class="math notranslate nohighlight">\(x\)</span>, такой, что <span class="math notranslate nohighlight">\(T\)</span>(<span class="math notranslate nohighlight">\(x\)</span>) = <span class="math notranslate nohighlight">\(y\)</span>).</p>
+</section>
+</section>
+<section id="id4">
+<h2>Идеальные точки и проективная плоскость<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<p>Теперь пополним аффинную плоскость некоторыми «бесконечными точками» и придем таким образом к понятию проективной плоскости.</p>
+<p>Пусть задана аффинная плоскость <span class="math notranslate nohighlight">\(a\)</span>. Для каждой прямой <span class="math notranslate nohighlight">\(l\)</span> ∈ <span class="math notranslate nohighlight">\(a\)</span> обозначим через [<span class="math notranslate nohighlight">\(l\)</span>] пучок параллельных ей прямых и назовем [<span class="math notranslate nohighlight">\(l\)</span>] <strong>идеальной</strong> или <strong>бесконечной точкой</strong> направления <span class="math notranslate nohighlight">\(l\)</span>. Мы будем записывать это так: <span class="math notranslate nohighlight">\(P\)</span>* = [<span class="math notranslate nohighlight">\(l\)</span>].</p>
+<p>Определим пополнение <span class="math notranslate nohighlight">\(S\)</span> плоскости <span class="math notranslate nohighlight">\(a\)</span> следующим образом. <strong>Точками</strong> <span class="math notranslate nohighlight">\(S\)</span> являются все точки плоскости <span class="math notranslate nohighlight">\(a\)</span> и все идеальные точки <span class="math notranslate nohighlight">\(a\)</span> (направления). <strong>Прямыми</strong> <span class="math notranslate nohighlight">\(S\)</span> служат</p>
+<ol class="arabic simple">
+<li><p>обычные прямые <span class="math notranslate nohighlight">\(l\)</span> плоскости <span class="math notranslate nohighlight">\(a\)</span>, дополненные соответствующими бесконечными точками <span class="math notranslate nohighlight">\(P\)</span>* = [<span class="math notranslate nohighlight">\(l\)</span>];</p></li>
+<li><p>«бесконечная прямая», состоящая из всех бесконечных точек плоскости <span class="math notranslate nohighlight">\(a\)</span>.</p></li>
+</ol>
+<p>Мы сейчас убедимся, что <span class="math notranslate nohighlight">\(S\)</span> есть проективная плоскость в смысле следующего определения:</p>
+<p><strong>Определение.</strong> <strong>Проективной плоскостью</strong> <span class="math notranslate nohighlight">\(S\)</span> называют множество, элементы которого именуются <strong>точками</strong>, и набор его подмножеств, именуемых <strong>прямыми</strong>, если при этом выполняются следующие четыре аксиомы.</p>
+<p><strong>П1.</strong> Через две различные точки <span class="math notranslate nohighlight">\(P\)</span> и <span class="math notranslate nohighlight">\(Q\)</span> плоскости <span class="math notranslate nohighlight">\(S\)</span> можно провести одну и только одну прямую.</p>
+<p><strong>П2.</strong> Любые две прямые пересекаются по меньшей мере в одной точке.</p>
+<p><strong>П3.</strong> Существуют три неколлинеарные точки.</p>
+<p><strong>П4.</strong> Прямая содержит по меньшей мере три точки.</p>
+<p><strong>Предложение 1.3.</strong> Описанное выше пополнение <span class="math notranslate nohighlight">\(S\)</span> аффинной плоскости <span class="math notranslate nohighlight">\(a\)</span> является проективной плоскостью.</p>
+<p><strong>Доказательство.</strong> Проверим выполнение четырех аксиом П1—П4.</p>
+<p><strong>П1.</strong> Пусть <span class="math notranslate nohighlight">\(P\)</span>, <span class="math notranslate nohighlight">\(Q\)</span> ∈ <span class="math notranslate nohighlight">\(S\)</span>.</p>
+<ol class="arabic simple">
+<li><p>Если <span class="math notranslate nohighlight">\(P\)</span> и <span class="math notranslate nohighlight">\(Q\)</span> — обыкновенные точки плоскости <span class="math notranslate nohighlight">\(a\)</span>, то через них можно провести только одну прямую из <span class="math notranslate nohighlight">\(a\)</span>. Точки <span class="math notranslate nohighlight">\(P\)</span> и <span class="math notranslate nohighlight">\(Q\)</span> не принадлежат бесконечной прямой «плоскости» <span class="math notranslate nohighlight">\(S\)</span>; поэтому и на <span class="math notranslate nohighlight">\(S\)</span> через них можно провести единственную прямую.</p></li>
+<li><p>Если <span class="math notranslate nohighlight">\(P\)</span> — обыкновенная точка <span class="math notranslate nohighlight">\(a\)</span>, а <span class="math notranslate nohighlight">\(Q\)</span> = [<span class="math notranslate nohighlight">\(l\)</span>] — идеальная точка, то по аксиоме А2 существует прямая <span class="math notranslate nohighlight">\(m\)</span>, такая, что <span class="math notranslate nohighlight">\(P\)</span> ∈ <span class="math notranslate nohighlight">\(m\)</span> и <span class="math notranslate nohighlight">\(m\)</span> ∥ <span class="math notranslate nohighlight">\(l\)</span>, т. е. <span class="math notranslate nohighlight">\(m\)</span> ∈ [<span class="math notranslate nohighlight">\(l\)</span>], так что <span class="math notranslate nohighlight">\(Q\)</span> принадлежит пополнению прямой <span class="math notranslate nohighlight">\(m\)</span> до прямой из <span class="math notranslate nohighlight">\(S\)</span>. Прямая <span class="math notranslate nohighlight">\(m\)</span>, очевидно, — единственная прямая «плоскости» <span class="math notranslate nohighlight">\(S\)</span>, проходящая через <span class="math notranslate nohighlight">\(P\)</span> и <span class="math notranslate nohighlight">\(Q\)</span>.</p></li>
+<li><p>Если <span class="math notranslate nohighlight">\(P\)</span> и <span class="math notranslate nohighlight">\(Q\)</span> — идеальные точки, то через них проходит бесконечная прямая множества <span class="math notranslate nohighlight">\(S\)</span> и только эта прямая.</p></li>
+</ol>
+<p><strong>П2.</strong> Пусть заданы прямые <span class="math notranslate nohighlight">\(l\)</span> и <span class="math notranslate nohighlight">\(m\)</span>.</p>
+<ol class="arabic simple">
+<li><p>Если <span class="math notranslate nohighlight">\(l\)</span> и <span class="math notranslate nohighlight">\(m\)</span> — обыкновенные прямые и <span class="math notranslate nohighlight">\(l\)</span> ≠ <span class="math notranslate nohighlight">\(m\)</span>, то они пересекаются в некоторой точке из <span class="math notranslate nohighlight">\(a\)</span>. Если <span class="math notranslate nohighlight">\(l\)</span> ∥ <span class="math notranslate nohighlight">\(m\)</span>, то они пересекаются в идеальной точке <span class="math notranslate nohighlight">\(P\)</span>* = [<span class="math notranslate nohighlight">\(l\)</span>] = [<span class="math notranslate nohighlight">\(m\)</span>].</p></li>
+<li><p>Если <span class="math notranslate nohighlight">\(l\)</span> — обыкновенная прямая, а <span class="math notranslate nohighlight">\(m\)</span> — бесконечная прямая, то они пересекаются в бесконечной точке <span class="math notranslate nohighlight">\(P\)</span>* = [<span class="math notranslate nohighlight">\(l\)</span>].</p></li>
+</ol>
+<p><strong>П3</strong> непосредственно следует из А3. Необходимо только проверить, что если <span class="math notranslate nohighlight">\(P\)</span>, <span class="math notranslate nohighlight">\(Q\)</span>, <span class="math notranslate nohighlight">\(R\)</span> неколлинеарны в <span class="math notranslate nohighlight">\(a\)</span>, то они не будут коллинеарными и в <span class="math notranslate nohighlight">\(S\)</span>. Действительно, в <span class="math notranslate nohighlight">\(S\)</span> существует только одна (бесконечная) прямая, не принадлежащая <span class="math notranslate nohighlight">\(a\)</span>, но точки <span class="math notranslate nohighlight">\(P\)</span>, <span class="math notranslate nohighlight">\(Q\)</span>, <span class="math notranslate nohighlight">\(R\)</span> ей не принадлежат.</p>
+<p><strong>П4.</strong> Каждая прямая плоскости <span class="math notranslate nohighlight">\(a\)</span> содержит хотя бы две точки (см. задачу 1 в конце книги). Но в <span class="math notranslate nohighlight">\(S\)</span> каждая прямая содержит еще и бесконечную точку; поэтому она содержит не менее трех точек.</p>
+<p><strong>Примеры.</strong> 1. Пополняя аффинную плоскость евклидовой геометрии, мы получим <strong>действительную проективную плоскость</strong>.</p>
+<ol class="arabic simple" start="2">
+<li><p>Пополняя аффинную плоскость из четырех точек, мы получаем проективную плоскость из семи точек.</p></li>
+<li><p>Построим еще один пример проективной плоскости. Пусть <strong>ℝ³</strong> — обыкновенное трехмерное евклидово пространство, и пусть <span class="math notranslate nohighlight">\(O\)</span> — некоторая точка из ℝ³. Обозначим через <span class="math notranslate nohighlight">\(l\)</span> множество прямых, проходящих через <span class="math notranslate nohighlight">\(O\)</span>.</p></li>
+</ol>
+<p><strong>Точкой</strong> в <span class="math notranslate nohighlight">\(l\)</span> мы назовем прямую из ℝ³, проходящую через <span class="math notranslate nohighlight">\(O\)</span>, а <strong>прямой</strong> — множество прямых, проходящих через <span class="math notranslate nohighlight">\(O\)</span> и лежащих в некоторой плоскости.</p>
+<p>Множество <span class="math notranslate nohighlight">\(l\)</span> удовлетворяет аксиомам П1–П4 (проверка этого предоставляется читателю) и, следовательно, является проективной плоскостью.</p>
+</section>
+<section id="id5">
+<h2>Однородные координаты на действительной проективной плоскости<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
+<p>Теперь мы дадим аналитическое определение действительной проективной плоскости. Вернемся к рассмотренному выше примеру с прямыми в ℝ³. Мы будем представлять точку <span class="math notranslate nohighlight">\(P\)</span> из <span class="math notranslate nohighlight">\(S\)</span>, соответствующую прямой <span class="math notranslate nohighlight">\(l\)</span>, некоторой точкой <span class="math notranslate nohighlight">\((x_1, x_2, x_3)\)</span> прямой <span class="math notranslate nohighlight">\(l\)</span>, не совпадающей с точкой <span class="math notranslate nohighlight">\(O\)</span> (0, 0, 0) (рис. 3). Числа <span class="math notranslate nohighlight">\(x_1, x_2, x_3\)</span> являются <strong>однородными координатами</strong> точки <span class="math notranslate nohighlight">\(P\)</span>. Любая другая точка прямой <span class="math notranslate nohighlight">\(l\)</span> имеет координаты <span class="math notranslate nohighlight">\((λx_1, λx_2, λx_3)\)</span>, где <span class="math notranslate nohighlight">\(λ ∈ ℝ, λ ≠ 0\)</span>. Таким образом, <span class="math notranslate nohighlight">\(S\)</span> есть множество троек <span class="math notranslate nohighlight">\((x_1, x_2, x_3)\)</span> действительных чисел, не все из которых равны нулю, причем</p>
+<p>тройки <span class="math notranslate nohighlight">\((x_1, x_2, x_3)\)</span> и <span class="math notranslate nohighlight">\((x_1′, x_2′, x_3′)\)</span> представляют одну и ту же точку из <span class="math notranslate nohighlight">\(S\)</span> ⇔</p>
+<p>⇔ ∃ <span class="math notranslate nohighlight">\(λ\)</span> ∈ ℝ, такое, что <span class="math notranslate nohighlight">\(x_i′ = λx_i\)</span> для <span class="math notranslate nohighlight">\(i = 1, 2, 3\)</span>.</p>
+<p>Поскольку уравнение плоскости из ℝ³, проходящей через начало координат <span class="math notranslate nohighlight">\(O\)</span>, записывается в виде</p>
+<div class="math notranslate nohighlight">
+\[
+a_1x_1 + a_2x_2 + a_3x_3 = 0, \text{ где не все } a_i = 0,
+\]</div>
+<p>его можно рассматривать также как уравнение прямой из <span class="math notranslate nohighlight">\(S\)</span> в однородных координатах.</p>
+<hr class="docutils" />
+<figure class="align-default">
+<img alt="../_images/3.png" src="../_images/3.png" />
+</figure>
+<p><strong>Определение.</strong> Две проективные плоскости <span class="math notranslate nohighlight">\(S\)</span> и <span class="math notranslate nohighlight">\(S′\)</span> называются <strong>изоморфными</strong>, если существует взаимно однозначное отображение <span class="math notranslate nohighlight">\(T\)</span> : <span class="math notranslate nohighlight">\(S\)</span> → <span class="math notranslate nohighlight">\(S′\)</span>, которое переводит коллинеарные точки в коллинеарные.</p>
+<p><strong>Предложение 1.4.</strong> Проективная плоскость <span class="math notranslate nohighlight">\(S\)</span>, описанная выше с помощью однородных действительных координат, изоморфна проективной плоскости, полученной пополнением обычной аффинной плоскости евклидовой геометрии.</p>
+<p><strong>Доказательство.</strong> Пусть, с одной стороны, дана плоскость <span class="math notranslate nohighlight">\(S\)</span>, точки которой задаются однородными координатами <span class="math notranslate nohighlight">\((x_1, x_2, x_3)\)</span>, <span class="math notranslate nohighlight">\(x_i\)</span> ∈ ℝ, не все <span class="math notranslate nohighlight">\(x_i\)</span> = 0. С другой стороны, мы имеем евклидову плоскость <span class="math notranslate nohighlight">\(a\)</span> с декартовыми координатами <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span>. Обозначим ее пополнение через <span class="math notranslate nohighlight">\(S′\)</span>. Точками <span class="math notranslate nohighlight">\(S′\)</span> являются 1) точки <span class="math notranslate nohighlight">\((x, y)\)</span>, <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span> ∈ ℝ, из <span class="math notranslate nohighlight">\(a\)</span>; 2) идеальные точки. Пучок параллельных прямых однозначно определяется угловым коэффициентом <span class="math notranslate nohighlight">\(m\)</span> соответствующей прямой, который может быть равен любому действительному числу или ∞. Таким образом, бесконечные точки описываются координатами <span class="math notranslate nohighlight">\(m\)</span>.</p>
+<p>Теперь мы определим отображение <span class="math notranslate nohighlight">\(T\)</span> : <span class="math notranslate nohighlight">\(S\)</span> → <span class="math notranslate nohighlight">\(S′\)</span>, которое установит изоморфизм <span class="math notranslate nohighlight">\(S\)</span> на <span class="math notranslate nohighlight">\(S′\)</span>. Пусть <span class="math notranslate nohighlight">\((x_1, x_2, x_3) = P\)</span> — некоторая точка из <span class="math notranslate nohighlight">\(S\)</span>.</p>
+<ol class="arabic simple">
+<li><p>Если <span class="math notranslate nohighlight">\(x_3\)</span> ≠ 0, то за <span class="math notranslate nohighlight">\(T(P)\)</span> мы примем точку из <span class="math notranslate nohighlight">\(a\)</span> с координатами <span class="math notranslate nohighlight">\(x = x_1/x_3, y = x_2/x_3\)</span>. Отметим, что точка <span class="math notranslate nohighlight">\(T(P)\)</span> определена однозначно, так как если мы заменим <span class="math notranslate nohighlight">\((x_1, x_2, x_3)\)</span> на <span class="math notranslate nohighlight">\((λx_1, λx_2, λx_3)\)</span>, то <span class="math notranslate nohighlight">\(x\)</span> и <span class="math notranslate nohighlight">\(y\)</span> не изменятся. При этом таким образом мы можем получить любую точку из <span class="math notranslate nohighlight">\(a\)</span>. Действительно, точка с координатами <span class="math notranslate nohighlight">\((x, y)\)</span> является образом точки плоскости <span class="math notranslate nohighlight">\(S\)</span> с однородными координатами <span class="math notranslate nohighlight">\((x, y, 1)\)</span>.</p></li>
+<li><p>Если <span class="math notranslate nohighlight">\(x_3 = 0\)</span>, то за <span class="math notranslate nohighlight">\(T(P)\)</span> мы примем идеальную точку из <span class="math notranslate nohighlight">\(S′\)</span> с угловым коэффициентом <span class="math notranslate nohighlight">\(m = x_2/x_1\)</span>. Заметим, что это отношение всегда имеет смысл, так как <span class="math notranslate nohighlight">\(x_1\)</span> и <span class="math notranslate nohighlight">\(x_2\)</span> оба равняться нулю не могут. При этом снова, если мы заменим <span class="math notranslate nohighlight">\((x_1, x_2, 0)\)</span> на <span class="math notranslate nohighlight">\((λx_1, λx_2, 0)\)</span>, то <span class="math notranslate nohighlight">\(m\)</span> не изменится. С другой стороны, мы так можем получить любое значение <span class="math notranslate nohighlight">\(m\)</span>: если <span class="math notranslate nohighlight">\(m ≠ ∞\)</span>, то мы выбираем точку <span class="math notranslate nohighlight">\(T(1, m, 0)\)</span>, а если <span class="math notranslate nohighlight">\(m = ∞\)</span>, то <span class="math notranslate nohighlight">\(T(0, 1, 0)\)</span>.</p></li>
+</ol>
+<p>Таким образом, <span class="math notranslate nohighlight">\(T\)</span> устанавливает взаимно однозначное соответствие между <span class="math notranslate nohighlight">\(S\)</span> и <span class="math notranslate nohighlight">\(S′\)</span>. Нам остается проверить, что <span class="math notranslate nohighlight">\(T\)</span> переводит коллинеарные точки в коллинеарные. Прямая <span class="math notranslate nohighlight">\(l\)</span> из <span class="math notranslate nohighlight">\(S\)</span> задается уравнением</p>
+<div class="math notranslate nohighlight">
+\[
+a_1x_1 + a_2x_2 + a_3x_3 = 0.
+\]</div>
+<ol class="arabic simple">
+<li><p>Предположим, что <span class="math notranslate nohighlight">\(a_1\)</span> и <span class="math notranslate nohighlight">\(a_2\)</span> не равны одновременно нулю. Тогда образом точки с координатами <span class="math notranslate nohighlight">\(x_1 = λa₂, x_2 = –λa₁, x_3 = 0\)</span> будет идеальная точка, заданная угловым коэффициентом <span class="math notranslate nohighlight">\(m = –a₁/a₂\)</span>. Она, очевидно, принадлежит прямой из <span class="math notranslate nohighlight">\(S′\)</span>, содержащей «конечные» точки — образы точек прямой <span class="math notranslate nohighlight">\(l\)</span>.</p></li>
+<li><p>Если <span class="math notranslate nohighlight">\(a₁ = a₂ = 0\)</span>, то <span class="math notranslate nohighlight">\(l\)</span> имеет уравнение <span class="math notranslate nohighlight">\(x_3 = 0\)</span>. Любая точка из <span class="math notranslate nohighlight">\(S\)</span>, принадлежащая этой прямой, переходит в идеальную точку из <span class="math notranslate nohighlight">\(S′\)</span>; совокупность таких точек образует бесконечную прямую.</p></li>
+</ol>
+<p>Ч. т. д.</p>
+<p><strong>Замечание.</strong> С этого момента мы не будем различать изоморфные плоскости, рассмотренные в предложении 1.4, и будем называть любую из них <strong>действительной проективной плоскостью</strong>. Это самый важный пример той аксиоматической теории, которую мы будем развивать в дальнейшем, и мы часто будем иллюстрировать получаемые результаты на этом примере. Более того, теоремы, доказанные для действительной проективной плоскости, будут иногда подсказывать результаты общей аксиоматической теории. Однако, доказывая какую-либо теорему в аксиоматической теории, мы должны исходить только из аксиом и из ранее доказанных теорем. Если мы обнаружим, что некое утверждение для действительной проективной плоскости справедливо, то это, несомненно, свидетельствует в пользу данного утверждения, но в принятой нами установке еще не составляет его доказательства.</p>
+<p>Отметим также, что если из действительной проективной плоскости удалить произвольную прямую, то получится евклидова (точнее, аффинная) плоскость.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapters"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="sec_4.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Проективная геометрия — основные понятия</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Аффинная геометрия</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Обозначения</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Идеальные точки и проективная плоскость</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Однородные координаты на действительной проективной плоскости</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Shishkin Artem
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

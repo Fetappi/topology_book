@@ -1,0 +1,742 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Лекция 3.1: Проективная геометрия — основные понятия &#8212; Практикум по компьютерным технологиям</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/seec_4';</script>
+    <link rel="icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../docs/icons/index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Практикум по компьютерным технологиям - Home"/>
+    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="Практикум по компьютерным технологиям - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../docs/icons/index.html">
+                    Язык программирования Python
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Глава 1</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="sec_1.html">Элементарная геометрия треугольника</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sec_2.html">Эрлангенская программа Феликса Клейна — новый взгляд на геометрию</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sec_3.html">Аффинные преобразования и аффинная геометрия</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/Fetappi/CPP_lectures" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/Fetappi/CPP_lectures/edit/main/chapters/seec_4.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/Fetappi/CPP_lectures/issues/new?title=Issue%20on%20page%20%2Fchapters/seec_4.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/chapters/seec_4.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Лекция 3.1: Проективная геометрия — основные понятия</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Введение</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">1. Проективная плоскость: определение и аксиомы</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">1.1. Идея: добавление бесконечно удалённых элементов</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">1.2. Аксиомы проективной плоскости</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">2. Однородные координаты</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">2.1. Определение</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">2.2. Связь с аффинной плоскостью</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">3. Модели проективной плоскости</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">3.1. Модель пучка прямых в пространстве</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">3.2. Сферическая модель</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">3.3. Модель в виде круга</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">4. Проективные преобразования</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">4.1. Определение</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">4.2. Перспективное (центральное) проектирование как частный случай</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">4.3. Важнейшая теорема</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">5. Инварианты проективных преобразований: двойное отношение</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">6. Принцип двойственности</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">7. Связь с аффинной геометрией</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">8. Резюме</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>Лекция 3.1: Проективная геометрия — основные понятия<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<section id="id2">
+<h2>Введение<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>Мы уже знакомы с евклидовой и аффинной геометриями. Евклидова геометрия изучает свойства, сохраняющиеся при движениях (расстояния, углы). Аффинная геометрия расширяет группу преобразований: аффинные преобразования сохраняют прямые и параллельность, но не расстояния и углы. Теперь мы сделаем следующий шаг и рассмотрим <strong>проективную геометрию</strong> — самую широкую из классических геометрий, сохраняющую только прямолинейное расположение точек.</p>
+<p>Проективная геометрия возникла в эпоху Возрождения в связи с развитием перспективы в живописи и архитектуре. Художники и математики (в первую очередь Жерар Дезарг, Блез Паскаль) заметили, что при центральном проектировании параллельные прямые могут пересекаться на картине (например, рельсы уходят в точку схода). Чтобы описать это явление единообразно, в геометрию вводят <strong>бесконечно удалённые точки</strong> и <strong>бесконечно удалённую прямую</strong>. Так возникает проективная плоскость, на которой любые две прямые пересекаются ровно в одной точке — нет исключений.</p>
+<p>С точки зрения Эрлангенской программы Клейна, <strong>проективная геометрия</strong> — это геометрия группы <strong>проективных преобразований</strong> (или коллинеаций), которые переводят прямые в прямые, но уже не обязаны сохранять параллельность.</p>
+</section>
+<hr class="docutils" />
+<section id="id3">
+<h2>1. Проективная плоскость: определение и аксиомы<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<section id="id4">
+<h3>1.1. Идея: добавление бесконечно удалённых элементов<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<p>Возьмём обычную евклидову плоскость. Добавим к каждой прямой одну новую «бесконечно удалённую» точку, причём параллельные прямые получают <strong>одну и ту же</strong> бесконечно удалённую точку, а непараллельные — разные. Множество всех бесконечно удалённых точек назовём <strong>бесконечно удалённой прямой</strong> <span class="math notranslate nohighlight">\((l_\infty)\)</span>.</p>
+<p>Теперь:</p>
+<ul class="simple">
+<li><p>Через две любые различные точки проходит единственная прямая (если одна из точек бесконечно удалённая, то прямая — это пучок прямых, параллельных данному направлению).</p></li>
+<li><p>Любые две прямые пересекаются: если они были параллельны в евклидовом смысле, то пересекаются в своей общей бесконечно удалённой точке; если не параллельны — в обычной точке.</p></li>
+</ul>
+<p>Полученная структура называется <strong>проективной плоскостью</strong>.</p>
+</section>
+<section id="id5">
+<h3>1.2. Аксиомы проективной плоскости<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<p>В чисто геометрическом (синтетическом) подходе проективная плоскость определяется следующими аксиомами (по Вейлю или по Гильберту в проективном варианте):</p>
+<ol class="arabic simple">
+<li><p><strong>Через две различные точки проходит ровно одна прямая.</strong></p></li>
+<li><p><strong>Любые две различные прямые пересекаются ровно в одной точке.</strong></p></li>
+<li><p><strong>Существуют четыре точки, из которых никакие три не лежат на одной прямой</strong> (общее положение).</p></li>
+<li><p><strong>Аксиома Дезарга</strong> (часто включается как теорема, но в некоторых аксиоматиках — как аксиома): Если два треугольника перспективны относительно точки (прямые, соединяющие соответственные вершины, пересекаются в одной точке), то они перспективны и относительно прямой (точки пересечения соответственных сторон лежат на одной прямой). И обратно.</p></li>
+<li><p><strong>Аксиома Паскаля</strong> (для коник) и аксиома порядка (для вещественной проективной плоскости) могут добавляться.</p></li>
+</ol>
+<p>В аналитическом подходе (который мы будем использовать) проективная плоскость строится как множество одномерных подпространств трёхмерного векторного пространства.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="id6">
+<h2>2. Однородные координаты<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
+<section id="id7">
+<h3>2.1. Определение<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<p>Рассмотрим трёхмерное евклидово пространство <span class="math notranslate nohighlight">\((\mathbb{R}^3)\)</span> с координатами <span class="math notranslate nohighlight">\(((X, Y, Z))\)</span> и выделим начало координат <span class="math notranslate nohighlight">\((O)\)</span>. Каждая прямая, проходящая через <span class="math notranslate nohighlight">\((O)\)</span> (кроме тривиальной), пересекает сферу в двух антиподальных точках. Отождествим эти две точки — получим модель проективной плоскости. Но удобнее работать алгебраически.</p>
+<p><strong>Точка проективной плоскости</strong> <span class="math notranslate nohighlight">\((\mathbb{P}^2)\)</span> — это класс эквивалентности ненулевых троек чисел <span class="math notranslate nohighlight">\(((x:y:z))\)</span> (однородных координат) по отношению пропорциональности:</p>
+<div class="math notranslate nohighlight">
+\[
+(x:y:z) \sim (\lambda x : \lambda y : \lambda z) \quad \text{для любого } \lambda \neq 0.
+\]</div>
+<p>То есть важны не сами числа, а их отношения.</p>
+<p><strong>Прямая</strong> в проективной плоскости задаётся линейным однородным уравнением</p>
+<div class="math notranslate nohighlight">
+\[
+a x + b y + c z = 0,
+\]</div>
+<p>где <span class="math notranslate nohighlight">\(((a,b,c))\)</span> — коэффициенты, определённые с точностью до ненулевого множителя. Это уравнение инвариантно относительно умножения <span class="math notranslate nohighlight">\(((x,y,z))\)</span> на <span class="math notranslate nohighlight">\((\lambda)\)</span>, поэтому корректно определяет множество точек.</p>
+</section>
+<section id="id8">
+<h3>2.2. Связь с аффинной плоскостью<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
+<p>Если зафиксировать <span class="math notranslate nohighlight">\((z = 1)\)</span> (нормировка), то точки с <span class="math notranslate nohighlight">\((z \neq 0)\)</span> можно отождествить с точками аффинной плоскости <span class="math notranslate nohighlight">\(((x/z, y/z))\)</span>. Точки с <span class="math notranslate nohighlight">\((z = 0)\)</span> — это <strong>бесконечно удалённые точки</strong>. Уравнение <span class="math notranslate nohighlight">\((z = 0)\)</span> задаёт бесконечно удалённую прямую <span class="math notranslate nohighlight">\((l_\infty)\)</span>.</p>
+<p>Таким образом:</p>
+<ul class="simple">
+<li><p>Аффинная плоскость <span class="math notranslate nohighlight">\((\mathbb{R}^2)\)</span> вкладывается в <span class="math notranslate nohighlight">\((\mathbb{P}^2)\)</span> как множество точек с <span class="math notranslate nohighlight">\((z \neq 0)\)</span>.</p></li>
+<li><p>Каждому направлению (классу параллельных прямых) соответствует единственная бесконечно удалённая точка — точка пересечения всех прямых этого направления.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="id9">
+<h2>3. Модели проективной плоскости<a class="headerlink" href="#id9" title="Link to this heading">#</a></h2>
+<section id="id10">
+<h3>3.1. Модель пучка прямых в пространстве<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
+<p>Возьмём точку <span class="math notranslate nohighlight">\((O)\)</span> в трёхмерном пространстве. Каждой прямой, проходящей через <span class="math notranslate nohighlight">\((O)\)</span>, поставим в соответствие точку проективной плоскости. Каждой плоскости, проходящей через <span class="math notranslate nohighlight">\((O)\)</span>, поставим в соответствие прямую. Тогда:</p>
+<ul class="simple">
+<li><p>Две прямые (точки) определяют плоскость (прямую).</p></li>
+<li><p>Две плоскости (прямые) пересекаются по прямой (точке).</p></li>
+</ul>
+<p>Это наглядная модель, но она трёхмерна.</p>
+</section>
+<section id="id11">
+<h3>3.2. Сферическая модель<a class="headerlink" href="#id11" title="Link to this heading">#</a></h3>
+<p>Рассмотрим сферу <span class="math notranslate nohighlight">\((S^2)\)</span> с центром в <span class="math notranslate nohighlight">\((O)\)</span>. Каждая прямая через <span class="math notranslate nohighlight">\((O)\)</span> пересекает сферу в двух диаметрально противоположных точках. Отождествим эти точки. Получим проективную плоскость. Прямые (большие окружности) после отождествления становятся замкнутыми кривыми без самопересечений. На этой модели удобно доказывать, что любые две прямые пересекаются ровно один раз.</p>
+</section>
+<section id="id12">
+<h3>3.3. Модель в виде круга<a class="headerlink" href="#id12" title="Link to this heading">#</a></h3>
+<p>Спроектируем южную полусферу на плоскость экватора (стереографическая проекция). Получим круг, причём диаметрально противоположные точки границы круга отождествляются. Это ещё одна модель проективной плоскости, часто используемая в топологии.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="id13">
+<h2>4. Проективные преобразования<a class="headerlink" href="#id13" title="Link to this heading">#</a></h2>
+<section id="id14">
+<h3>4.1. Определение<a class="headerlink" href="#id14" title="Link to this heading">#</a></h3>
+<p><strong>Проективное преобразование</strong> (или коллинеация) проективной плоскости <span class="math notranslate nohighlight">\((\mathbb{P}^2)\)</span> — это взаимно однозначное отображение, переводящее прямые в прямые.</p>
+<p>В однородных координатах любое проективное преобразование задаётся невырожденной матрицей <span class="math notranslate nohighlight">\((3 \times 3)\)</span> (с точностью до ненулевого множителя):</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{pmatrix} x' \\ y' \\ z' \end{pmatrix} = 
+\begin{pmatrix} a_{11} &amp; a_{12} &amp; a_{13} \\ a_{21} &amp; a_{22} &amp; a_{23} \\ a_{31} &amp; a_{32} &amp; a_{33} \end{pmatrix}
+\begin{pmatrix} x \\ y \\ z \end{pmatrix}.
+\end{split}\]</div>
+<p>Поскольку координаты однородные, умножение матрицы на ненулевое число не меняет преобразования.</p>
+<p><strong>Важное свойство:</strong> проективные преобразования образуют группу (композиция двух преобразований — снова проективное преобразование, обратное существует).</p>
+</section>
+<section id="id15">
+<h3>4.2. Перспективное (центральное) проектирование как частный случай<a class="headerlink" href="#id15" title="Link to this heading">#</a></h3>
+<p>Классический пример: пусть даны две плоскости <span class="math notranslate nohighlight">\((\alpha)\)</span> и <span class="math notranslate nohighlight">\((\alpha')\)</span> в пространстве и точка <span class="math notranslate nohighlight">\((O)\)</span> (центр проекции), не лежащая ни в одной из них. Отображение, которое каждой точке <span class="math notranslate nohighlight">\((A)\)</span> плоскости <span class="math notranslate nohighlight">\((\alpha)\)</span> ставит в соответствие точку <span class="math notranslate nohighlight">\((A' = OA \cap \alpha')\)</span>, является проективным преобразованием между этими двумя плоскостями (но не преобразованием одной и той же плоскости). Если мы отождествим плоскости с помощью какого-либо вспомогательного отображения, то получим проективное преобразование плоскости на себя.</p>
+<p><strong>Свойство:</strong> при центральном проектировании параллельные прямые могут переходить в пересекающиеся (и наоборот). Именно поэтому проективная геометрия не различает параллельность.</p>
+</section>
+<section id="id16">
+<h3>4.3. Важнейшая теорема<a class="headerlink" href="#id16" title="Link to this heading">#</a></h3>
+<p><strong>Теорема (задание проективного преобразования тремя парами точек).</strong><br />
+На проективной прямой существует единственное проективное преобразование, переводящее любые три заданные точки в любые три другие точки (при условии, что обе тройки различны).<br />
+Аналогично, на проективной плоскости существует единственное проективное преобразование, переводящее любые четыре точки общего положения (никакие три не коллинеарны) в любые четыре точки общего положения.</p>
+<p>Этот факт позволяет строить проективные преобразования, задавая образы базовых элементов.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="id17">
+<h2>5. Инварианты проективных преобразований: двойное отношение<a class="headerlink" href="#id17" title="Link to this heading">#</a></h2>
+<p>Главным числовым инвариантом проективной геометрии является <strong>двойное (сложное) отношение</strong> четырёх точек на прямой.</p>
+<p><strong>Определение.</strong> Для четырёх точек <span class="math notranslate nohighlight">\((A, B, C, D)\)</span> на прямой, заданных в однородных координатах, двойное отношение определяется как</p>
+<div class="math notranslate nohighlight">
+\[
+(AB, CD) = \frac{AC}{CB} : \frac{AD}{DB}
+\]</div>
+<p>(в подходящей аффинной карте). Более инвариантно: если точки имеют координаты <span class="math notranslate nohighlight">\((a, b, c, d)\)</span> (числа), то</p>
+<div class="math notranslate nohighlight">
+\[
+(AB, CD) = \frac{(a-c)(b-d)}{(a-d)(b-c)}.
+\]</div>
+<p><strong>Теорема.</strong> Двойное отношение четырёх точек не меняется при проективных преобразованиях.<br />
+Обратно, если отображение прямой сохраняет двойное отношение для любой четвёрки точек, то оно проективно.</p>
+<p>В проективной геометрии двойное отношение играет ту же роль, что расстояние в евклидовой геометрии: оно позволяет ввести метрику (как это сделал Клейн для неевклидовых геометрий).</p>
+</section>
+<hr class="docutils" />
+<section id="id18">
+<h2>6. Принцип двойственности<a class="headerlink" href="#id18" title="Link to this heading">#</a></h2>
+<p>Одно из самых красивых свойств проективной геометрии — <strong>принцип двойственности</strong>. Он гласит:</p>
+<blockquote>
+<div><p>Если в некоторой теореме проективной геометрии заменить слова «точка» на «прямая», «прямая» на «точка», «лежит на» на «проходит через», «соединяет» на «пересекает» и т.д., то снова получится верная теорема.</p>
+</div></blockquote>
+<p><strong>Пример:</strong><br />
+Исходная теорема: «Через две точки проходит единственная прямая».<br />
+Двойственная: «Две прямые пересекаются в единственной точке».</p>
+<p><strong>Почему это работает?</strong> Потому что аксиомы проективной плоскости симметричны относительно замены «точка» ↔ «прямая». В однородных координатах точка задаётся вектором <span class="math notranslate nohighlight">\(((x:y:z))\)</span>, а прямая — уравнением <span class="math notranslate nohighlight">\((ax+by+cz=0)\)</span>, т.е. тоже тройкой коэффициентов <span class="math notranslate nohighlight">\(((a:b:c))\)</span>. Таким образом, точки и прямые имеют одинаковое описание — они двойственны.</p>
+<p><strong>Двойственные фигуры:</strong></p>
+<ul class="simple">
+<li><p>Треугольник ↔ трёхсторонник (три прямые, не проходящие через одну точку).</p></li>
+<li><p>Четырёхугольник ↔ четырёхсторонник.</p></li>
+</ul>
+<p>Принцип двойственности часто позволяет получить новую теорему из уже доказанной без дополнительных усилий.</p>
+</section>
+<hr class="docutils" />
+<section id="id19">
+<h2>7. Связь с аффинной геометрией<a class="headerlink" href="#id19" title="Link to this heading">#</a></h2>
+<p>Аффинная геометрия — это проективная геометрия с выделенной <strong>бесконечно удалённой прямой</strong>. Если мы зафиксируем прямую <span class="math notranslate nohighlight">\((l_\infty)\)</span> и будем рассматривать только те проективные преобразования, которые отображают <span class="math notranslate nohighlight">\((l_\infty)\)</span> на себя, то их ограничение на аффинную часть (дополнение <span class="math notranslate nohighlight">\((l_\infty)\)</span>) даст аффинные преобразования.</p>
+<p>Таким образом, аффинные преобразования — это в точности проективные преобразования, сохраняющие бесконечно удалённую прямую (как множество). Соответственно, аффинная геометрия — это проективная геометрия с дополнительной структурой (выделенная прямая).</p>
+</section>
+<hr class="docutils" />
+<section id="id20">
+<h2>8. Резюме<a class="headerlink" href="#id20" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Проективная плоскость</strong> получается из аффинной добавлением бесконечно удалённой прямой. На ней любые две прямые пересекаются.</p></li>
+<li><p><strong>Однородные координаты</strong> <span class="math notranslate nohighlight">\(((x:y:z))\)</span> — удобный аналитический аппарат.</p></li>
+<li><p><strong>Проективные преобразования</strong> задаются невырожденными матрицами <span class="math notranslate nohighlight">\((3\times3)\)</span> в однородных координатах. Они переводят прямые в прямые.</p></li>
+<li><p><strong>Двойное отношение</strong> — основной проективный инвариант.</p></li>
+<li><p><strong>Принцип двойственности</strong> позволяет автоматически получать новые теоремы.</p></li>
+<li><p><strong>Аффинная геометрия</strong> — частный случай проективной при фиксации бесконечно удалённой прямой.</p></li>
+</ul>
+<p>В следующей лекции мы рассмотрим классические теоремы проективной геометрии: <strong>теоремы Дезарга и Паскаля</strong>, а также подробнее разберём, как проективные преобразования классифицируются и как они связаны с кониками (кривыми второго порядка).</p>
+<hr class="docutils" />
+<p><strong>Вопросы для самопроверки:</strong></p>
+<ol class="arabic simple">
+<li><p>Чем проективная плоскость отличается от аффинной?</p></li>
+<li><p>Что такое однородные координаты и как они связаны с обычными декартовыми?</p></li>
+<li><p>Какие преобразования называются проективными?</p></li>
+<li><p>Сформулируйте принцип двойственности. Приведите пример двойственной пары утверждений.</p></li>
+<li><p>Почему аффинные преобразования являются частным случаем проективных?</p></li>
+</ol>
+<p><strong>Литература:</strong></p>
+<ul class="simple">
+<li><p>Ефимов Н.В. «Высшая геометрия», глава о проективной геометрии.</p></li>
+<li><p>Ефимов Н.В., Розендорн Э.Р. «Линейная алгебра и многомерная геометрия».</p></li>
+<li><p>Клейн Ф. «Элементарная математика с точки зрения высшей», том 2.</p></li>
+</ul>
+<hr class="docutils" />
+<p><em>Следующая лекция: теоремы Дезарга и Паскаля, коники в проективной геометрии.</em></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapters"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Введение</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">1. Проективная плоскость: определение и аксиомы</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">1.1. Идея: добавление бесконечно удалённых элементов</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">1.2. Аксиомы проективной плоскости</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">2. Однородные координаты</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">2.1. Определение</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">2.2. Связь с аффинной плоскостью</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">3. Модели проективной плоскости</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">3.1. Модель пучка прямых в пространстве</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">3.2. Сферическая модель</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">3.3. Модель в виде круга</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">4. Проективные преобразования</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">4.1. Определение</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">4.2. Перспективное (центральное) проектирование как частный случай</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">4.3. Важнейшая теорема</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">5. Инварианты проективных преобразований: двойное отношение</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">6. Принцип двойственности</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">7. Связь с аффинной геометрией</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">8. Резюме</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Shishkin Artem
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

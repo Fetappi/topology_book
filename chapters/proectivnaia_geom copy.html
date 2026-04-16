@@ -1,0 +1,693 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Основы проективной геометрии &#8212; Практикум по компьютерным технологиям</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/proectivnaia_geom copy';</script>
+    <link rel="icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../docs/icons/index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Практикум по компьютерным технологиям - Home"/>
+    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="Практикум по компьютерным технологиям - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../docs/icons/index.html">
+                    Язык программирования Python
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Глава 1</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="sec_1.html">Элементарная геометрия треугольника</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sec_2.html">Эрлангенская программа Феликса Клейна — новый взгляд на геометрию</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sec_3.html">Аффинные преобразования и аффинная геометрия</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sec_4.html">Проективная геометрия — основные понятия</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proectivnaia_geom.html">Основы проективной геометрии</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/Fetappi/CPP_lectures" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/Fetappi/CPP_lectures/edit/main/chapters/proectivnaia_geom copy.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/Fetappi/CPP_lectures/issues/new?title=Issue%20on%20page%20%2Fchapters/proectivnaia_geom copy.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/chapters/proectivnaia_geom copy.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Основы проективной геометрии</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Аффинная геометрия</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Обозначения</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Идеальные точки и проективная плоскость</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Однородные координаты на действительной проективной плоскости</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>Основы проективной геометрии<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<p>Проективная геометрия изучает свойства инцидентности, т. е. те свойства, которые сохраняются при растяжениях, переносах и вращениях плоскости. Поэтому при аксиоматическом построении теории мы вынуждены игнорировать понятия расстояния и угла.</p>
+<p>Одним из самых важных примеров в этой книге является действительная проективная плоскость, и здесь мы займемся выяснением того, какие из знакомых нам фактов и методов (относящихся к евклидовой и аналитической геометрии) остаются справедливыми и для проективной плоскости, а какие теряют силу.</p>
+<section id="id2">
+<h2>Аффинная геометрия<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>Начнем с некоторых наиболее простых фактов обычной плоской геометрии, которые мы примем в качестве аксиом при синтетическом построении теории.</p>
+<p><strong>Определение.</strong> Аффинной плоскостью называют множество элементов, именуемых <strong>точками</strong>, и систему его подмножеств, именуемых <strong>прямыми</strong>, причем должны выполняться три формулируемые ниже аксиомы А1 — А3.</p>
+<p>Мы будем говорить, что «<em>P</em> лежит на <em>l</em>» или «<em>l</em> проходит через <em>P</em>», если точка <em>P</em> есть элемент подмножества (прямой) <em>l</em>.</p>
+<p><strong>А1.</strong> Для любых двух различных точек <em>P</em> и <em>Q</em> существует одна и только одна прямая, проходящая через них.</p>
+<p>Две прямые называются <strong>параллельными</strong>, если они совпадают или не имеют общих точек.</p>
+<p><strong>А2.</strong> Для любых заданных прямой <em>l</em> и точки <em>P</em> существует одна и только одна проходящая через <em>P</em> прямая <em>m</em>, параллельная <em>l</em>.</p>
+<p><strong>А3.</strong> Существуют три неколлинеарные точки.<br />
+(Точки <em>P₁, …, Pₙ</em> называются <strong>коллинеарными</strong>, если существует такая прямая <em>l</em>, что все эти точки ей принадлежат.)</p>
+<section id="id3">
+<h3>Обозначения<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Символ</p></th>
+<th class="head"><p>Значение</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><em>P ≠ Q</em></p></td>
+<td><p><em>P</em> не совпадает с <em>Q</em></p></td>
+</tr>
+<tr class="row-odd"><td><p><em>P ∈ l</em></p></td>
+<td><p><em>P</em> принадлежит <em>l</em></p></td>
+</tr>
+<tr class="row-even"><td><p><em>l ∩ m</em></p></td>
+<td><p>пересечение <em>l</em> и <em>m</em></p></td>
+</tr>
+<tr class="row-odd"><td><p><em>l</em> ∥ <em>m</em></p></td>
+<td><p><em>l</em> параллельна <em>m</em></p></td>
+</tr>
+<tr class="row-even"><td><p>∀</p></td>
+<td><p>для каждого</p></td>
+</tr>
+<tr class="row-odd"><td><p>∃</p></td>
+<td><p>существует</p></td>
+</tr>
+<tr class="row-even"><td><p>⇒</p></td>
+<td><p>влечет за собой</p></td>
+</tr>
+<tr class="row-odd"><td><p>⇔</p></td>
+<td><p>тогда и только тогда</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Пример.</strong> Обычная евклидова плоскость <strong>ℝ²</strong> удовлетворяет аксиомам А1–А3, т. е. является аффинной плоскостью.</p>
+<hr class="docutils" />
+<figure class="align-default">
+<img alt="../_images/1.png" src="../_images/1.png" />
+</figure>
+<p>На этой плоскости удобно ввести декартовы координаты, как в аналитической геометрии (рис. 1). При этом точка <em>P</em> представится парой <em>(x, y)</em>, где <em>x</em> и <em>y</em> — действительные числа. (Мы будем писать <span class="math notranslate nohighlight">\(x, y \in \mathbb{R}\)</span>).</p>
+<p><strong>Предложение 1.1.</strong> Параллельность является отношением эквивалентности.</p>
+<p><strong>Определение.</strong> Отношение ∼ есть отношение эквивалентности, если имеют место следующие три свойства:</p>
+<ol class="arabic simple">
+<li><p><strong>рефлексивность:</strong> <em>a</em> ∼ <em>a</em>,</p></li>
+<li><p><strong>симметричность:</strong> <em>a</em> ∼ <em>b</em> ⇔ <em>b</em> ∼ <em>a</em>,</p></li>
+<li><p><strong>транзитивность:</strong> <em>a</em> ∼ <em>b</em> и <em>b</em> ∼ <em>c</em> ⇔ <em>a</em> ∼ <em>c</em>.</p></li>
+</ol>
+<p><strong>Доказательство.</strong> Нам надо проверить следующие три утверждения:</p>
+<ol class="arabic simple">
+<li><p>каждая прямая параллельна сама себе (по определению);</p></li>
+<li><p><em>l</em> ∥ <em>m</em> ⇒ <em>m</em> ∥ <em>l</em> (по определению);</p></li>
+<li><p>если <em>l</em> ∥ <em>m</em> и <em>m</em> ∥ <em>n</em>, то <em>n</em> ∥ <em>l</em>.</p></li>
+</ol>
+<p>Если <em>l</em> = <em>n</em>, то доказательства не требуется. Если <em>l</em> ≠ <em>n</em> и существует точка <em>P</em> ∈ <em>l</em> ∩ <em>n</em>, то прямые <em>l</em> и <em>n</em> обе ∥ <em>m</em> и проходят через <em>P</em>, что невозможно по аксиоме A₂. Отсюда мы заключаем, что <em>l</em> ∩ <em>n</em> = ∅ (пустое множество), т. е. <em>l</em> ∥ <em>n</em>.</p>
+<p><strong>Предложение 1.2.</strong> Две различные прямые имеют не более одной общей точки.</p>
+<p>Это следует из того, что если две прямые <em>l</em> и <em>m</em> имеют две общие точки <em>P</em> и <em>Q</em>, <em>P</em> ≠ <em>Q</em>, то <em>l</em> = <em>m</em> по аксиоме A₁.</p>
+<p><strong>Пример.</strong> Аффинная плоскость имеет по крайней мере четыре различные точки; плоскость, состоящая ровно из четырех точек, существует.</p>
+<p>Действительно, в силу A₃ на плоскости есть три неколлинеарные точки; обозначим их через <em>P</em>, <em>Q</em>, <em>R</em>. Согласно A₂, существует прямая <em>l</em>, проходящая через <em>P</em> и параллельная прямой <em>QR</em>, соединяющей <em>Q</em> и <em>R</em> (эта прямая существует по A₁). Точно так же доказывается существование прямой <em>m</em> ∥ <em>PQ</em>, проходящей через <em>R</em>.</p>
+<p>Покажем теперь, что <em>l</em> не параллельна <em>m</em> (<em>l</em> ≠ <em>m</em>). Если бы это было не так, то мы бы имели</p>
+<div class="math notranslate nohighlight">
+\[
+PQ ∥ m ∥ l ∥ QR,
+\]</div>
+<p>откуда <em>PQ</em> ∥ <em>QR</em> по предложению 1.1. Но это невозможно, так как <em>PQ</em> ≠ <em>QR</em>, а <em>Q</em> принадлежит каждой из этих прямых.</p>
+<p>Отсюда следует, что <em>l</em> и <em>m</em> пересекаются в некоторой точке <em>S</em>. Так как <em>S</em> принадлежит прямой <em>m</em>, параллельной <em>PQ</em> и не совпадающей с ней, то <em>S</em> ≠ <em>P</em> и <em>S</em> ≠ <em>Q</em>. Точно так же <em>S</em> ≠ <em>R</em>. Таким образом, <strong>четвертая точка</strong> <em>S</em> необходимо должна существовать, и наше первое утверждение доказано.</p>
+<hr class="docutils" />
+<figure class="align-default">
+<img alt="../_images/2.png" src="../_images/2.png" />
+</figure>
+<p>Теперь рассмотрим прямые <em>PR</em> и <em>QS</em>. Они могут пересекаться (докажите, например, что это так в случае действительной проективной плоскости). Но они могут и не пересекаться — это не противоречит аксиомам.</p>
+<p>В этом случае мы получаем аффинную плоскость, содержащую ровно четыре точки <em>P</em>, <em>Q</em>, <em>R</em>, <em>S</em> и шесть прямых <em>PQ</em>, <em>PR</em>, <em>PS</em>, <em>QR</em>, <em>QS</em>, <em>RS</em> (см. рис. 2). Легко видеть, что аксиомы A1–A3 здесь выполняются. Таким образом, мы получили аффинную плоскость, содержащую наименьшее возможное число точек, а именно четыре.</p>
+<p><strong>Определение.</strong> Множество прямых образует <strong>пучок</strong>, если</p>
+<ol class="arabic simple">
+<li><p>все прямые этого множества проходят через некоторую точку <em>P</em>,</p></li>
+<li><p>все прямые множества параллельны некоторой прямой <em>l</em>; в этом случае говорят, что задан <strong>пучок параллельных прямых</strong>.</p></li>
+</ol>
+<p>В дальнейшем нам понадобится также следующее</p>
+<p><strong>Определение.</strong> <strong>Взаимно однозначным соответствием</strong> между двумя множествами <em>X</em> и <em>Y</em> называется такое отображение <em>T</em> : <em>X</em> → <em>Y</em> (т. е. правило <em>T</em>, по которому каждому элементу <em>x</em> ∈ <em>X</em> ставится в соответствие элемент <em>T</em>(<em>x</em>) = <em>y</em> ∈ <em>Y</em>), что</p>
+<div class="math notranslate nohighlight">
+\[
+x_1 \neq x_2 \Rightarrow T(x_1) \neq T(x_2)
+\]</div>
+<p>и</p>
+<div class="math notranslate nohighlight">
+\[
+\forall y \in Y \; \exists x \in X : T(x) = y
+\]</div>
+<p>(последнее читается: для каждого <em>y</em> ∈ <em>Y</em> существует элемент <em>x</em> ∈ <em>X</em>, такой, что <em>T</em>(<em>x</em>) = <em>y</em>).</p>
+</section>
+</section>
+<section id="id4">
+<h2>Идеальные точки и проективная плоскость<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<p>Теперь пополним аффинную плоскость некоторыми «бесконечными точками» и придем таким образом к понятию проективной плоскости.</p>
+<p>Пусть задана аффинная плоскость <em>A</em>. Для каждой прямой <em>l</em> ∈ <em>A</em> обозначим через [<em>l</em>] пучок параллельных ей прямых и назовем [<em>l</em>] <strong>идеальной</strong> или <strong>бесконечной точкой</strong> направления <em>l</em>. Мы будем записывать это так: <em>P</em>* = [<em>l</em>].</p>
+<p>Определим пополнение <em>S</em> плоскости <em>A</em> следующим образом. <strong>Точками</strong> <em>S</em> являются все точки плоскости <em>A</em> и все идеальные точки <em>A</em> (направления). <strong>Прямыми</strong> <em>S</em> служат</p>
+<ol class="arabic simple">
+<li><p>обычные прямые <em>l</em> плоскости <em>A</em>, дополненные соответствующими бесконечными точками <em>P</em>* = [<em>l</em>];</p></li>
+<li><p>«бесконечная прямая», состоящая из всех бесконечных точек плоскости <em>A</em>.</p></li>
+</ol>
+<p>Мы сейчас убедимся, что <em>S</em> есть проективная плоскость в смысле следующего определения:</p>
+<p><strong>Определение.</strong> <strong>Проективной плоскостью</strong> <em>S</em> называют множество, элементы которого именуются <strong>точками</strong>, и набор его подмножеств, именуемых <strong>прямыми</strong>, если при этом выполняются следующие четыре аксиомы.</p>
+<p><strong>П1.</strong> Через две различные точки <em>P</em> и <em>Q</em> плоскости <em>S</em> можно провести одну и только одну прямую.</p>
+<p><strong>П2.</strong> Любые две прямые пересекаются по меньшей мере в одной точке.</p>
+<p><strong>П3.</strong> Существуют три неколлинеарные точки.</p>
+<p><strong>П4.</strong> Прямая содержит по меньшей мере три точки.</p>
+<p><strong>Предложение 1.3.</strong> Описанное выше пополнение <em>S</em> аффинной плоскости <em>A</em> является проективной плоскостью.</p>
+<p><strong>Доказательство.</strong> Проверим выполнение четырех аксиом П1—П4.</p>
+<p><strong>П1.</strong> Пусть <em>P</em>, <em>Q</em> ∈ <em>S</em>.</p>
+<ol class="arabic simple">
+<li><p>Если <em>P</em> и <em>Q</em> — обыкновенные точки плоскости <em>A</em>, то через них можно провести только одну прямую из <em>A</em>. Точки <em>P</em> и <em>Q</em> не принадлежат бесконечной прямой «плоскости» <em>S</em>; поэтому и на <em>S</em> через них можно провести единственную прямую.</p></li>
+<li><p>Если <em>P</em> — обыкновенная точка <em>A</em>, а <em>Q</em> = [<em>l</em>] — идеальная точка, то по аксиоме А2 существует прямая <em>m</em>, такая, что <em>P</em> ∈ <em>m</em> и <em>m</em> ∥ <em>l</em>, т. е. <em>m</em> ∈ [<em>l</em>], так что <em>Q</em> принадлежит пополнению прямой <em>m</em> до прямой из <em>S</em>. Прямая <em>m</em>, очевидно, — единственная прямая «плоскости» <em>S</em>, проходящая через <em>P</em> и <em>Q</em>.</p></li>
+<li><p>Если <em>P</em> и <em>Q</em> — идеальные точки, то через них проходит бесконечная прямая множества <em>S</em> и только эта прямая.</p></li>
+</ol>
+<p><strong>П2.</strong> Пусть заданы прямые <em>l</em> и <em>m</em>.</p>
+<ol class="arabic simple">
+<li><p>Если <em>l</em> и <em>m</em> — обыкновенные прямые и <em>l</em> ≠ <em>m</em>, то они пересекаются в некоторой точке из <em>A</em>. Если <em>l</em> ∥ <em>m</em>, то они пересекаются в идеальной точке <em>P</em>* = [<em>l</em>] = [<em>m</em>].</p></li>
+<li><p>Если <em>l</em> — обыкновенная прямая, а <em>m</em> — бесконечная прямая, то они пересекаются в бесконечной точке <em>P</em>* = [<em>l</em>].</p></li>
+</ol>
+<p><strong>П3</strong> непосредственно следует из А3. Необходимо только проверить, что если <em>P</em>, <em>Q</em>, <em>R</em> неколлинеарны в <em>A</em>, то они не будут коллинеарными и в <em>S</em>. Действительно, в <em>S</em> существует только одна (бесконечная) прямая, не принадлежащая <em>A</em>, но точки <em>P</em>, <em>Q</em>, <em>R</em> ей не принадлежат.</p>
+<p><strong>П4.</strong> Каждая прямая плоскости <em>A</em> содержит хотя бы две точки (см. задачу 1 в конце книги). Но в <em>S</em> каждая прямая содержит еще и бесконечную точку; поэтому она содержит не менее трех точек.</p>
+<p><strong>Примеры.</strong> 1. Пополняя аффинную плоскость евклидовой геометрии, мы получим <strong>действительную проективную плоскость</strong>.</p>
+<ol class="arabic simple" start="2">
+<li><p>Пополняя аффинную плоскость из четырех точек, мы получаем проективную плоскость из семи точек.</p></li>
+<li><p>Построим еще один пример проективной плоскости. Пусть <strong>ℝ³</strong> — обыкновенное трехмерное евклидово пространство, и пусть <em>O</em> — некоторая точка из ℝ³. Обозначим через <em>L</em> множество прямых, проходящих через <em>O</em>.</p></li>
+</ol>
+<p><strong>Точкой</strong> в <em>L</em> мы назовем прямую из ℝ³, проходящую через <em>O</em>, а <strong>прямой</strong> — множество прямых, проходящих через <em>O</em> и лежащих в некоторой плоскости.</p>
+<p>Множество <em>L</em> удовлетворяет аксиомам П1–П4 (проверка этого предоставляется читателю) и, следовательно, является проективной плоскостью.</p>
+</section>
+<section id="id5">
+<h2>Однородные координаты на действительной проективной плоскости<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
+<p>Теперь мы дадим аналитическое определение действительной проективной плоскости. Вернемся к рассмотренному выше примеру с прямыми в ℝ³. Мы будем представлять точку <em>P</em> из <em>S</em>, соответствующую прямой <em>l</em>, некоторой точкой <em>(x₁, x₂, x₃)</em> прямой <em>l</em>, не совпадающей с точкой <em>O</em> (0, 0, 0) (рис. 3). Числа <em>x₁, x₂, x₃</em> являются <strong>однородными координатами</strong> точки <em>P</em>. Любая другая точка прямой <em>l</em> имеет координаты <em>(λx₁, λx₂, λx₃)</em>, где <em>λ</em> ∈ ℝ, <em>λ</em> ≠ 0. Таким образом, <em>S</em> есть множество троек <em>(x₁, x₂, x₃)</em> действительных чисел, не все из которых равны нулю, причем</p>
+<p>тройки <em>(x₁, x₂, x₃)</em> и <em>(x₁′, x₂′, x₃′)</em> представляют одну и ту же точку из <em>S</em> ⇔</p>
+<p>⇔ ∃ <em>λ</em> ∈ ℝ, такое, что <em>xᵢ′</em> = <em>λxᵢ</em> для <em>i</em> = 1, 2, 3.</p>
+<p>Поскольку уравнение плоскости из ℝ³, проходящей через начало координат <em>O</em>, записывается в виде</p>
+<div class="math notranslate nohighlight">
+\[
+a_1x_1 + a_2x_2 + a_3x_3 = 0, \text{ где не все } a_i = 0,
+\]</div>
+<p>его можно рассматривать также как уравнение прямой из <em>S</em> в однородных координатах.</p>
+<hr class="docutils" />
+<figure class="align-default">
+<img alt="../_images/3.png" src="../_images/3.png" />
+</figure>
+<p><strong>Определение.</strong> Две проективные плоскости <em>S</em> и <em>S′</em> называются <strong>изоморфными</strong>, если существует взаимно однозначное отображение <em>T</em> : <em>S</em> → <em>S′</em>, которое переводит коллинеарные точки в коллинеарные.</p>
+<p><strong>Предложение 1.4.</strong> Проективная плоскость <em>S</em>, описанная выше с помощью однородных действительных координат, изоморфна проективной плоскости, полученной пополнением обычной аффинной плоскости евклидовой геометрии.</p>
+<p><strong>Доказательство.</strong> Пусть, с одной стороны, дана плоскость <em>S</em>, точки которой задаются однородными координатами <em>(x₁, x₂, x₃)</em>, <em>xᵢ</em> ∈ ℝ, не все <em>xᵢ</em> = 0. С другой стороны, мы имеем евклидову плоскость <em>A</em> с декартовыми координатами <em>x</em>, <em>y</em>. Обозначим ее пополнение через <em>S′</em>. Точками <em>S′</em> являются 1) точки <em>(x, y)</em>, <em>x</em>, <em>y</em> ∈ ℝ, из <em>A</em>; 2) идеальные точки. Пучок параллельных прямых однозначно определяется угловым коэффициентом <em>m</em> соответствующей прямой, который может быть равен любому действительному числу или ∞. Таким образом, бесконечные точки описываются координатами <em>m</em>.</p>
+<p>Теперь мы определим отображение <em>T</em> : <em>S</em> → <em>S′</em>, которое установит изоморфизм <em>S</em> на <em>S′</em>. Пусть <em>(x₁, x₂, x₃) = P</em> — некоторая точка из <em>S</em>.</p>
+<p>1° Если <em>x₃</em> ≠ 0, то за <em>T(P)</em> мы примем точку из <em>A</em> с координатами <em>x = x₁/x₃</em>, <em>y = x₂/x₃</em>. Отметим, что точка <em>T(P)</em> определена однозначно, так как если мы заменим <em>(x₁, x₂, x₃)</em> на <em>(λx₁, λx₂, λx₃)</em>, то <em>x</em> и <em>y</em> не изменятся. При этом таким образом мы можем получить любую точку из <em>A</em>. Действительно, точка с координатами <em>(x, y)</em> является образом точки плоскости <em>S</em> с однородными координатами <em>(x, y, 1)</em>.</p>
+<p>2° Если <em>x₃ = 0</em>, то за <em>T(P)</em> мы примем идеальную точку из <em>S′</em> с угловым коэффициентом <em>m = x₂/x₁</em>. Заметим, что это отношение всегда имеет смысл, так как <em>x₁</em> и <em>x₂</em> оба равняться нулю не могут. При этом снова, если мы заменим <em>(x₁, x₂, 0)</em> на <em>(λx₁, λx₂, 0)</em>, то <em>m</em> не изменится. С другой стороны, мы так можем получить любое значение <em>m</em>: если <em>m ≠ ∞</em>, то мы выбираем точку <em>T(1, m, 0)</em>, а если <em>m = ∞</em>, то <em>T(0, 1, 0)</em>.</p>
+<p>Таким образом, <em>T</em> устанавливает взаимно однозначное соответствие между <em>S</em> и <em>S′</em>. Нам остается проверить, что <em>T</em> переводит коллинеарные точки в коллинеарные. Прямая <em>l</em> из <em>S</em> задается уравнением</p>
+<div class="math notranslate nohighlight">
+\[
+a_1x_1 + a_2x_2 + a_3x_3 = 0.
+\]</div>
+<p>1° Предположим, что <em>a₁</em> и <em>a₂</em> не равны одновременно нулю. Тогда образом точки с координатами <em>x₁ = λa₂</em>, <em>x₂ = –λa₁</em>, <em>x₃ = 0</em> будет идеальная точка, заданная угловым коэффициентом <em>m = –a₁/a₂</em>. Она, очевидно, принадлежит прямой из <em>S′</em>, содержащей «конечные» точки — образы точек прямой <em>l</em>.</p>
+<p>2° Если <em>a₁ = a₂ = 0</em>, то <em>l</em> имеет уравнение <em>x₃ = 0</em>. Любая точка из <em>S</em>, принадлежащая этой прямой, переходит в идеальную точку из <em>S′</em>; совокупность таких точек образует бесконечную прямую.</p>
+<p>Ч. т. д.</p>
+<p><strong>Замечание.</strong> С этого момента мы не будем различать изоморфные плоскости, рассмотренные в предложении 1.4, и будем называть любую из них <strong>действительной проективной плоскостью</strong>. Это самый важный пример той аксиоматической теории, которую мы будем развивать в дальнейшем, и мы часто будем иллюстрировать получаемые результаты на этом примере. Более того, теоремы, доказанные для действительной проективной плоскости, будут иногда подсказывать результаты общей аксиоматической теории. Однако, доказывая какую-либо теорему в аксиоматической теории, мы должны исходить только из аксиом и из ранее доказанных теорем. Если мы обнаружим, что некое утверждение для действительной проективной плоскости справедливо, то это, несомненно, свидетельствует в пользу данного утверждения, но в принятой нами установке еще не составляет его доказательства.</p>
+<p>Отметим также, что если из действительной проективной плоскости удалить произвольную прямую, то получится евклидова (точнее, аффинная) плоскость.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapters"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Аффинная геометрия</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Обозначения</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Идеальные точки и проективная плоскость</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Однородные координаты на действительной проективной плоскости</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Shishkin Artem
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

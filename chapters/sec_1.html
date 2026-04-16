@@ -1,0 +1,735 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Элементарная геометрия треугольника &#8212; Практикум по компьютерным технологиям</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/sec_1';</script>
+    <link rel="icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Эрлангенская программа Феликса Клейна — новый взгляд на геометрию" href="sec_2.html" />
+    <link rel="prev" title="Язык программирования Python" href="../docs/icons/index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../docs/icons/index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Практикум по компьютерным технологиям - Home"/>
+    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="Практикум по компьютерным технологиям - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../docs/icons/index.html">
+                    Язык программирования Python
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Глава 1</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Элементарная геометрия треугольника</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sec_2.html">Эрлангенская программа Феликса Клейна — новый взгляд на геометрию</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sec_3.html">Аффинные преобразования и аффинная геометрия</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sec_4.html">Проективная геометрия — основные понятия</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proectivnaia_geom.html">Основы проективной геометрии</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/Fetappi/CPP_lectures" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/Fetappi/CPP_lectures/edit/main/chapters/sec_1.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/Fetappi/CPP_lectures/issues/new?title=Issue%20on%20page%20%2Fchapters/sec_1.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/chapters/sec_1.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Элементарная геометрия треугольника</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1. Медианы</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">2. Окружность девяти точек (окружность Эйлера)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">3. Биссектрисы</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">4. Высоты</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">5. Серединные перпендикуляры</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">6. Замечательные точки треугольника</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">6.1. Точка Лемуана</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">6.2. Центр Шпикера</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">6.3. Точки Аполлония</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">6.4. Точки Брокара</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">6.5. Точки Торричелли (Ферма)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">7. Прямая Эйлера</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">8. Прямая Симсона</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">9. Теоремы Чевы и Менелая</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">9.1. Теорема Менелая</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">9.2. Теорема Чевы</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>Элементарная геометрия треугольника<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<section id="id2">
+<h2>1. Медианы<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p><strong>Определение.</strong> <em>Медианой треугольника</em> называется отрезок, соединяющий вершину треугольника с серединой противоположной стороны.</p>
+<p><strong>Теорема (о пересечении медиан).</strong><br />
+Все три медианы треугольника пересекаются в одной точке. Эта точка называется <strong>центроидом</strong> (или центром тяжести) треугольника. Центроид делит каждую медиану в отношении <span class="math notranslate nohighlight">\((2:1)\)</span>, считая от вершины.</p>
+<p><strong>Следствие.</strong> Тремя медианами треугольник разбивается на шесть равновеликих треугольников.<br />
+(Площади всех шести маленьких треугольников равны.)</p>
+<p>Центры описанных окружностей этих шести треугольников лежат на одной окружности, которая называется <strong>окружностью Ламуна</strong>.</p>
+<figure class="align-default">
+<img alt="../_images/medians_triangle.png" src="../_images/medians_triangle.png" />
+</figure>
+</section>
+<hr class="docutils" />
+<section id="id3">
+<h2>2. Окружность девяти точек (окружность Эйлера)<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<p>Рассмотрим произвольный треугольник <span class="math notranslate nohighlight">\((ABC)\)</span>. Обозначим:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\((A_1, B_1, C_1)\)</span> – середины сторон <span class="math notranslate nohighlight">\((BC, CA, AB)\)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\((A_2, B_2, C_2)\)</span> – основания высот, опущенных из вершин <span class="math notranslate nohighlight">\((A, B, C)\)</span> на противоположные стороны;</p></li>
+<li><p><span class="math notranslate nohighlight">\((A_3, B_3, C_3)\)</span> – середины отрезков от вершин до ортоцентра <span class="math notranslate nohighlight">\((H)\)</span> (точки пересечения высот).</p></li>
+</ul>
+<p><strong>Теорема Эйлера.</strong> Точки <span class="math notranslate nohighlight">\((A_1, B_1, C_1, A_2, B_2, C_2, A_3, B_3, C_3)\)</span> лежат на одной окружности. Эта окружность называется <strong>окружностью девяти точек</strong> (или окружностью Эйлера).</p>
+<p><strong>Свойства окружности девяти точек:</strong></p>
+<ul class="simple">
+<li><p>Её центр находится в середине отрезка, соединяющего ортоцентр <span class="math notranslate nohighlight">\((H)\)</span> и центр описанной окружности <span class="math notranslate nohighlight">\((O)\)</span>. Таким образом, центр окружности девяти точек лежит на <strong>прямой Эйлера</strong> (о которой мы скажем позже).</p></li>
+<li><p>Радиус окружности девяти точек равен половине радиуса описанной окружности.</p></li>
+</ul>
+<figure class="align-default">
+<img alt="../_images/nine_point_circle.gif" src="../_images/nine_point_circle.gif" />
+</figure>
+</section>
+<hr class="docutils" />
+<section id="id4">
+<h2>3. Биссектрисы<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<p><strong>Определение.</strong> <em>Биссектрисой</em> треугольника называется отрезок биссектрисы внутреннего угла, заключённый между вершиной и противоположной стороной.</p>
+<p><strong>Теорема (о пересечении биссектрис).</strong><br />
+Биссектрисы внутренних углов треугольника пересекаются в одной точке. Эта точка называется <strong>инцентром</strong> (центром вписанной окружности). Она равноудалена от всех сторон треугольника.</p>
+<p><strong>Свойства:</strong></p>
+<ul class="simple">
+<li><p>Инцентр является центром вписанной окружности.</p></li>
+<li><p>Каждая биссектриса делится точкой пересечения биссектрис в отношении суммы прилежащих сторон к противолежащей, считая от вершины.</p></li>
+<li><p>Биссектрисы одного внутреннего и двух внешних углов треугольника также пересекаются в одной точке – центре <strong>вневписанной окружности</strong>. Таких точек три (по числу углов).</p></li>
+</ul>
+<p><strong>Гипербола Фейербаха.</strong> Это описанная гипербола, проходящая через ортоцентр и инцентр. Её центр находится в точке Фейербаха (о которой ниже).</p>
+<figure class="align-default">
+<img alt="../_images/bisectors_triangle.png" src="../_images/bisectors_triangle.png" />
+</figure>
+</section>
+<hr class="docutils" />
+<section id="id5">
+<h2>4. Высоты<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
+<p><strong>Определение.</strong> <em>Высотой</em> треугольника называется перпендикуляр, опущенный из вершины на прямую, содержащую противоположную сторону.</p>
+<p><strong>Теорема (о пересечении высот).</strong><br />
+Три высоты треугольника (или их продолжения) пересекаются в одной точке. Эта точка называется <strong>ортоцентром</strong> и обозначается <span class="math notranslate nohighlight">\((H)\)</span>.</p>
+<p><strong>Теорема Гамильтона.</strong> Три отрезка, соединяющих ортоцентр с вершинами остроугольного треугольника, разбивают его на три треугольника, имеющих ту же самую окружность Эйлера, что и исходный треугольник.</p>
+<p><strong>Обобщённая теорема Вивиани.</strong> Если от концов наименьшей стороны треугольника отложить на двух других сторонах отрезки, равные наименьшей стороне, и соединить полученные точки прямой, то эта прямая будет геометрическим местом точек, для которых сумма расстояний до трёх сторон треугольника постоянна. (Частный случай для равностороннего треугольника даёт классическую теорему Вивиани.)</p>
+<figure class="align-default">
+<img alt="../_images/altitudes_triangle.png" src="../_images/altitudes_triangle.png" />
+</figure>
+</section>
+<hr class="docutils" />
+<section id="id6">
+<h2>5. Серединные перпендикуляры<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
+<p><strong>Определение.</strong> <em>Серединным перпендикуляром</em> к отрезку называется прямая, проходящая через середину отрезка и перпендикулярная ему.</p>
+<p><strong>Теорема (о пересечении серединных перпендикуляров).</strong><br />
+Серединные перпендикуляры к сторонам треугольника пересекаются в одной точке. Эта точка – центр <strong>описанной окружности</strong> треугольника.</p>
+<ul class="simple">
+<li><p>В остроугольном треугольнике центр лежит внутри треугольника.</p></li>
+<li><p>В тупоугольном – вне треугольника.</p></li>
+<li><p>В прямоугольном – на середине гипотенузы.</p></li>
+</ul>
+<p><strong>Свойство.</strong> Любая точка серединного перпендикуляра равноудалена от концов отрезка.</p>
+<figure class="align-default">
+<img alt="../_images/perpendicular_bisectors.png" src="../_images/perpendicular_bisectors.png" />
+</figure>
+</section>
+<hr class="docutils" />
+<section id="id7">
+<h2>6. Замечательные точки треугольника<a class="headerlink" href="#id7" title="Link to this heading">#</a></h2>
+<section id="id8">
+<h3>6.1. Точка Лемуана<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
+<p><strong>Определение.</strong> <em>Точкой Лемуана</em> (или точкой пересечения симедиан) называется точка пересечения прямых, соединяющих вершины треугольника с точками пересечения касательных к описанной окружности, проведённых из двух других вершин.</p>
+<p><strong>Свойства:</strong></p>
+<ul class="simple">
+<li><p>Сумма квадратов расстояний от точки на плоскости до сторон треугольника минимальна, когда эта точка является точкой Лемуана.</p></li>
+<li><p>Расстояния от точки Лемуана до сторон треугольника пропорциональны длинам сторон.</p></li>
+<li><p>Точка Лемуана является точкой пересечения медиан треугольника, образованного проекциями этой точки на стороны. Более того, такая точка единственна.</p></li>
+</ul>
+<figure class="align-default">
+<img alt="../_images/symmedian_all_vertices.gif" src="../_images/symmedian_all_vertices.gif" />
+</figure>
+</section>
+<section id="id9">
+<h3>6.2. Центр Шпикера<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
+<p><strong>Определение.</strong> <em>Центр Шпикера</em> – это центр масс периметра треугольника, т.е. центр тяжести однородной проволоки, изогнутой по периметру треугольника.</p>
+<p><strong>Свойства:</strong></p>
+<ul class="simple">
+<li><p>Центр Шпикера является инцентром серединного треугольника (треугольника, образованного серединами сторон исходного).</p></li>
+<li><p>Центр Шпикера является центром кливеров треугольника (кливер – отрезок, соединяющий середину стороны с точкой касания вневписанной окружности).</p></li>
+<li><p>Центр Шпикера является радикальным центром трёх вневписанных окружностей.</p></li>
+</ul>
+</section>
+<section id="id10">
+<h3>6.3. Точки Аполлония<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
+<p><strong>Определение.</strong> <em>Точками Аполлония</em> называются две такие точки, расстояния от которых до вершин треугольника обратно пропорциональны длинам противолежащих сторон.</p>
+<p><strong>Свойства:</strong></p>
+<ul class="simple">
+<li><p>Точки Аполлония являются центрами инверсии, переводящей данный треугольник в равносторонний.</p></li>
+<li><p>Окружности, построенные как на диаметре на отрезке, соединяющем основания внутренней и внешней биссектрисы из одного угла, проходят через точки Аполлония.</p></li>
+<li><p>Точки Аполлония лежат на прямой, соединяющей центр описанной окружности с точкой Лемуана. Эта прямая называется <strong>осью Брокара</strong>.</p></li>
+</ul>
+</section>
+<section id="id11">
+<h3>6.4. Точки Брокара<a class="headerlink" href="#id11" title="Link to this heading">#</a></h3>
+<p><strong>Определение.</strong> <em>Точками Брокара</em> называются две точки внутри треугольника, возникающие как пересечение отрезков, соединяющих вершины с соответствующими свободными вершинами треугольников, подобных данному и построенных на его сторонах.</p>
+<p><strong>Свойства:</strong></p>
+<ul class="simple">
+<li><p>Точки Брокара лежат на <strong>окружности Брокара</strong> – окружности, построенной на отрезке, соединяющем центр описанной окружности с точкой Лемуана, как на диаметре. На ней также лежат вершины первых двух треугольников Брокара.</p></li>
+<li><p>Точки Брокара сопряжены изогонально (т.е. симметричны относительно биссектрис углов).</p></li>
+</ul>
+</section>
+<section id="id12">
+<h3>6.5. Точки Торричелли (Ферма)<a class="headerlink" href="#id12" title="Link to this heading">#</a></h3>
+<p><strong>Определение.</strong> <em>Первая точка Торричелли</em> – это точка треугольника, из которой все стороны видны под углом <span class="math notranslate nohighlight">\((120^\circ)\)</span>. Она существует только в треугольниках, все углы которых меньше <span class="math notranslate nohighlight">\((120^\circ)\)</span>.</p>
+<p><strong>Свойства:</strong></p>
+<ul class="simple">
+<li><p>Первая точка Торричелли минимизирует сумму расстояний до вершин треугольника. Поэтому она является частным случаем точки Ферма (которая может существовать и при угле <span class="math notranslate nohighlight">\((120^\circ))\)</span>.</p></li>
+<li><p>Две точки Торричелли и точка Лемуана лежат на одной прямой.</p></li>
+<li><p><strong>Теорема Лестера:</strong> В любом разностороннем треугольнике две точки Торричелли, центр девяти точек и центр описанной окружности лежат на одной окружности (окружности Лестера).</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="id13">
+<h2>7. Прямая Эйлера<a class="headerlink" href="#id13" title="Link to this heading">#</a></h2>
+<p><strong>Определение.</strong> <em>Прямой Эйлера</em> называется прямая, проходящая через центр описанной окружности <span class="math notranslate nohighlight">\((O)\)</span>, центроид <span class="math notranslate nohighlight">\((G)\)</span> и ортоцентр <span class="math notranslate nohighlight">\((H)\)</span>.</p>
+<p><strong>Теорема Эйлера.</strong> Точка пересечения медиан <span class="math notranslate nohighlight">\((G)\)</span> делит отрезок <span class="math notranslate nohighlight">\((OH)\)</span> в отношении <span class="math notranslate nohighlight">\((OG:GH = 1:2)\)</span> (считая от центра описанной окружности).</p>
+<p><strong>Теорема Шиффлера.</strong> Если в треугольнике <span class="math notranslate nohighlight">\((ABC)\)</span> с инцентром <span class="math notranslate nohighlight">\((I)\)</span> рассмотреть треугольники <span class="math notranslate nohighlight">\((BCI)\)</span>, <span class="math notranslate nohighlight">\((CAI)\)</span>, <span class="math notranslate nohighlight">\((ABI)\)</span>, то их прямые Эйлера вместе с прямой Эйлера треугольника <span class="math notranslate nohighlight">\((ABC)\)</span> пересекаются в одной точке – <strong>точке Шиффлера</strong>.</p>
+</section>
+<hr class="docutils" />
+<section id="id14">
+<h2>8. Прямая Симсона<a class="headerlink" href="#id14" title="Link to this heading">#</a></h2>
+<p><strong>Определение.</strong> Пусть точка <span class="math notranslate nohighlight">\((P)\)</span> лежит на описанной окружности треугольника <span class="math notranslate nohighlight">\((ABC)\)</span>. Опустим из <span class="math notranslate nohighlight">\((P)\)</span> перпендикуляры на стороны треугольника (или их продолжения). Основания этих перпендикуляров лежат на одной прямой. Эта прямая называется <strong>прямой Симсона</strong> (иногда её называют прямой Уоллеса).</p>
+<p><strong>Теорема Симсона.</strong> Для любой точки <span class="math notranslate nohighlight">\((P)\)</span> на описанной окружности треугольника основания перпендикуляров, опущенных из <span class="math notranslate nohighlight">\((P)\)</span> на стороны треугольника (или их продолжения), коллинеарны.</p>
+<p><strong>Интересное свойство:</strong> Прямые Симсона для всех точек описанной окружности огибают кривую, называемую <strong>дельтоидой Штейнера</strong> (она касается каждой прямой Симсона).</p>
+</section>
+<hr class="docutils" />
+<section id="id15">
+<h2>9. Теоремы Чевы и Менелая<a class="headerlink" href="#id15" title="Link to this heading">#</a></h2>
+<p>Эти две теоремы являются мощным инструментом для доказательства конкурентности (пересечения в одной точке) прямых, соединяющих вершины с точками на сторонах, и коллинеарности точек.</p>
+<section id="id16">
+<h3>9.1. Теорема Менелая<a class="headerlink" href="#id16" title="Link to this heading">#</a></h3>
+<p><strong>Формулировка.</strong> Пусть прямая пересекает стороны треугольника <span class="math notranslate nohighlight">\((ABC)\)</span> (или их продолжения) в точках <span class="math notranslate nohighlight">\((A_1 \in BC)\)</span>, <span class="math notranslate nohighlight">\((B_1 \in CA)\)</span>, <span class="math notranslate nohighlight">\((C_1 \in AB)\)</span>. Тогда эти три точки лежат на одной прямой тогда и только тогда, когда</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{AB_1}{B_1C} \cdot \frac{CA_1}{A_1B} \cdot \frac{BC_1}{C_1A} = 1.
+\]</div>
+<p>(Отношения берутся как направленные отрезки, т.е. с учётом знака.)</p>
+</section>
+<section id="id17">
+<h3>9.2. Теорема Чевы<a class="headerlink" href="#id17" title="Link to this heading">#</a></h3>
+<p><strong>Формулировка.</strong> Пусть на сторонах треугольника <span class="math notranslate nohighlight">\((ABC)\)</span> выбраны точки <span class="math notranslate nohighlight">\((A_1 \in BC)\)</span>, <span class="math notranslate nohighlight">\((B_1 \in CA)\)</span>, <span class="math notranslate nohighlight">\((C_1 \in AB)\)</span>. Тогда отрезки <span class="math notranslate nohighlight">\((AA_1, BB_1, CC_1)\)</span> (чевианы) пересекаются в одной точке тогда и только тогда, когда</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{AB_1}{B_1C} \cdot \frac{CA_1}{A_1B} \cdot \frac{BC_1}{C_1A} = 1.
+\]</div>
+<p>(Снова отношения направленные.)</p>
+<p><strong>Следствие.</strong> Медианы, биссектрисы и высоты пересекаются в одной точке – это легко проверяется по теореме Чевы.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapters"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../docs/icons/index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Язык программирования Python</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="sec_2.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Эрлангенская программа Феликса Клейна — новый взгляд на геометрию</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1. Медианы</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">2. Окружность девяти точек (окружность Эйлера)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">3. Биссектрисы</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">4. Высоты</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">5. Серединные перпендикуляры</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">6. Замечательные точки треугольника</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">6.1. Точка Лемуана</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">6.2. Центр Шпикера</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">6.3. Точки Аполлония</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">6.4. Точки Брокара</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">6.5. Точки Торричелли (Ферма)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">7. Прямая Эйлера</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">8. Прямая Симсона</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">9. Теоремы Чевы и Менелая</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">9.1. Теорема Менелая</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">9.2. Теорема Чевы</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Shishkin Artem
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
