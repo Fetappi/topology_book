@@ -1,0 +1,10 @@
+format: jb-book
+root: docs/icons/index
+parts:
+  - caption: Глава 1
+    chapters:
+      - file: chapters/sec_1
+      - file: chapters/sec_2
+      - file: chapters/sec_3
+      - file: chapters/sec_4
+      - file: chapters/proectivnaia_geom
